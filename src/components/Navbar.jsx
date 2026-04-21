@@ -62,9 +62,9 @@ export default function Navbar({ onOpenSearch }) {
                 decoding="async"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
-              <div className={`hidden md:flex flex-col leading-none ${overlayMode ? 'text-white' : 'text-navy-900'}`}>
-                <span className="font-display font-black text-[0.95rem] tracking-[0.08em]">DENFORD BUSINESS</span>
-                <span className="font-display font-black text-[0.95rem] tracking-[0.08em]">ATTORNEYS</span>
+              <div className={`flex flex-col leading-none ${overlayMode ? 'text-white' : 'text-navy-900'}`}>
+                <span className="font-display font-black text-[0.72rem] sm:text-[0.82rem] md:text-[0.95rem] tracking-[0.06em] md:tracking-[0.08em] whitespace-nowrap">DENFORD BUSINESS</span>
+                <span className="font-display font-black text-[0.72rem] sm:text-[0.82rem] md:text-[0.95rem] tracking-[0.06em] md:tracking-[0.08em] whitespace-nowrap">ATTORNEYS</span>
               </div>
             </Link>
 
