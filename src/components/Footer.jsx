@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { LinkedinLogo, FacebookLogo, Envelope, Phone, MapPin } from '@phosphor-icons/react';
+import { LinkedinLogo, FacebookLogo, Envelope, Phone, MapPin, WhatsappLogo } from '@phosphor-icons/react';
 import { firm, practiceAreas, memberships } from '../data/siteData';
 
 export default function Footer() {
@@ -118,6 +118,17 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+            <a
+              href={`https://wa.me/${firm.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent("Hi DBA, I'd like to discuss a matter with one of your attorneys.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 px-5 py-3 font-display text-[0.66rem] tracking-[0.22em] uppercase font-bold text-white transition-all hover:brightness-110"
+              style={{ backgroundColor: '#25D366' }}
+            >
+              <WhatsappLogo size={13} weight="fill" />
+              Message on WhatsApp
+            </a>
+
             <p className="mt-6 index-label text-bone-100/40">Hours</p>
             <p className="mt-2 font-body text-[0.82rem] text-bone-100/70">{firm.hours}</p>
           </div>

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { List, X, ArrowRight } from '@phosphor-icons/react';
+import { List, X, ArrowRight, MagnifyingGlass, WhatsappLogo } from '@phosphor-icons/react';
 import { firm } from '../data/siteData';
+
+const WA_MSG = "Hi DBA, I'd like to discuss a matter with one of your attorneys.";
 
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
@@ -15,11 +17,12 @@ const NAV_LINKS = [
   { to: '/contact', label: 'Contact' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onOpenSearch }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
   const isHome = pathname === '/';
+  const waHref = `https://wa.me/${(firm.whatsapp || firm.phone || '').replace(/\D/g, '')}?text=${encodeURIComponent(WA_MSG)}`;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -87,7 +90,31 @@ export default function Navbar() {
             </nav>
 
             {/* CTA & mobile menu */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 md:gap-3">
+              {/* Search */}
+              <button
+                onClick={() => onOpenSearch && onOpenSearch()}
+                aria-label="Open search"
+                className={`p-2.5 transition-colors ${
+                  overlayMode ? 'text-white hover:text-gold-400' : 'text-navy-900 hover:text-gold-500'
+                }`}
+              >
+                <MagnifyingGlass size={20} weight="regular" />
+              </button>
+
+              {/* WhatsApp pill — desktop */}
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Message DBA on WhatsApp"
+                className="hidden md:inline-flex items-center gap-2 px-4 py-2.5 font-display text-[0.68rem] tracking-[0.22em] uppercase font-semibold text-white transition-all duration-300 hover:brightness-110"
+                style={{ backgroundColor: '#25D366' }}
+              >
+                <WhatsappLogo size={14} weight="fill" />
+                WhatsApp
+              </a>
+
               <Link
                 to="/contact"
                 className={`hidden md:inline-flex items-center gap-2 px-5 py-3 text-[0.7rem] tracking-[0.22em] uppercase font-display font-semibold transition-all duration-300 ${
@@ -132,6 +159,15 @@ export default function Navbar() {
                 </button>
               </div>
               <div className="flex-1 overflow-y-auto px-6 py-12">
+                {/* Mobile search trigger */}
+                <button
+                  onClick={() => { setOpen(false); onOpenSearch && onOpenSearch(); }}
+                  className="w-full flex items-center gap-3 px-4 py-4 border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors mb-8"
+                >
+                  <MagnifyingGlass size={18} weight="regular" />
+                  <span className="font-display text-[0.72rem] tracking-[0.22em] uppercase">Search DBA</span>
+                </button>
+
                 <nav className="flex flex-col gap-6">
                   {NAV_LINKS.map((link, i) => (
                     <motion.div
@@ -160,6 +196,16 @@ export default function Navbar() {
                 <p className="leading-relaxed">{firm.address}</p>
                 <p className="mt-1">{firm.phoneDisplay}</p>
                 <p className="mt-1">{firm.email}</p>
+                <a
+                  href={waHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex items-center gap-2 px-5 py-3 font-display text-[0.68rem] tracking-[0.22em] uppercase font-semibold text-white"
+                  style={{ backgroundColor: '#25D366' }}
+                >
+                  <WhatsappLogo size={14} weight="fill" />
+                  Message on WhatsApp
+                </a>
               </div>
             </div>
           </motion.div>

@@ -58,6 +58,49 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Quick-action cards */}
+      <section className="pb-10 md:pb-14 bg-bone-50">
+        <div className="max-w-[1480px] mx-auto px-5 md:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5">
+            <a
+              href={`tel:${firm.phone}`}
+              className="group p-6 bg-white border border-steel-200 hover:border-navy-700 transition-colors"
+            >
+              <Phone size={22} className="text-navy-700 group-hover:text-gold-500 transition-colors" weight="regular" />
+              <p className="mt-4 index-label text-ink-400">Telephone</p>
+              <p className="mt-1 font-display font-bold text-navy-900 text-base">{firm.phoneDisplay}</p>
+            </a>
+            <a
+              href={`mailto:${firm.email}`}
+              className="group p-6 bg-white border border-steel-200 hover:border-navy-700 transition-colors"
+            >
+              <Envelope size={22} className="text-navy-700 group-hover:text-gold-500 transition-colors" weight="regular" />
+              <p className="mt-4 index-label text-ink-400">Email</p>
+              <p className="mt-1 font-display font-bold text-navy-900 text-base break-all">{firm.email}</p>
+            </a>
+            <div className="group p-6 bg-white border border-steel-200">
+              <MapPin size={22} className="text-navy-700" weight="regular" />
+              <p className="mt-4 index-label text-ink-400">Chambers</p>
+              <p className="mt-1 font-display font-bold text-navy-900 text-base leading-snug">{firm.address}</p>
+            </div>
+            <a
+              href={`https://wa.me/${firm.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent("Hi DBA, I'd like to discuss a matter with one of your attorneys.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-6 text-white transition-all hover:brightness-110 flex flex-col"
+              style={{ backgroundColor: '#25D366' }}
+            >
+              <WhatsappLogo size={22} weight="fill" />
+              <p className="mt-4 font-display text-[0.66rem] tracking-[0.22em] uppercase font-bold text-white/80">WhatsApp</p>
+              <p className="mt-1 font-display font-bold text-base">Message us directly</p>
+              <span className="mt-3 inline-flex items-center gap-1.5 font-display text-[0.66rem] tracking-[0.22em] uppercase font-bold">
+                Open chat <ArrowRight size={12} weight="bold" />
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Form + contact details */}
       <section className="pb-20 md:pb-28 bg-bone-50">
         <div className="max-w-[1480px] mx-auto px-5 md:px-10">
