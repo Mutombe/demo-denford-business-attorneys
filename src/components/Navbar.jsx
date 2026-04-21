@@ -13,7 +13,6 @@ const NAV_LINKS = [
   { to: '/attorneys', label: 'Attorneys' },
   { to: '/clients', label: 'Clients' },
   { to: '/insights', label: 'Insights' },
-  { to: '/careers', label: 'Careers' },
   { to: '/contact', label: 'Contact' },
 ];
 

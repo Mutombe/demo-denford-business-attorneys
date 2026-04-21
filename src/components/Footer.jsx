@@ -92,7 +92,6 @@ export default function Footer() {
               <li><Link to="/attorneys" className="font-display text-[0.85rem] text-bone-100/80 hover:text-white tracking-wide">Attorneys</Link></li>
               <li><Link to="/clients" className="font-display text-[0.85rem] text-bone-100/80 hover:text-white tracking-wide">Clients</Link></li>
               <li><Link to="/insights" className="font-display text-[0.85rem] text-bone-100/80 hover:text-white tracking-wide">Insights</Link></li>
-              <li><Link to="/careers" className="font-display text-[0.85rem] text-bone-100/80 hover:text-white tracking-wide">Careers</Link></li>
               <li><Link to="/contact" className="font-display text-[0.85rem] text-bone-100/80 hover:text-white tracking-wide">Contact</Link></li>
             </ul>
           </div>

@@ -19,7 +19,6 @@ import AttorneyDetail from './pages/AttorneyDetail';
 import Clients from './pages/Clients';
 import Insights from './pages/Insights';
 import InsightDetail from './pages/InsightDetail';
-import Careers from './pages/Careers';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
@@ -51,7 +50,6 @@ export default function App() {
               <Route path="/clients" element={<Clients />} />
               <Route path="/insights" element={<Insights />} />
               <Route path="/insights/:slug" element={<InsightDetail />} />
-              <Route path="/careers" element={<Careers />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

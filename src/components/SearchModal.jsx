@@ -9,11 +9,10 @@ const PAGES = [
   { name: 'Attorneys', path: '/attorneys', description: 'Meet the team.' },
   { name: 'Clients', path: '/clients', description: 'Who we serve — institutional to individual.' },
   { name: 'Insights', path: '/insights', description: 'Articles, briefings, and thought leadership.' },
-  { name: 'Careers', path: '/careers', description: 'Join a partner-led boutique.' },
   { name: 'Contact', path: '/contact', description: 'Book a strategic consultation.' },
 ];
 
-const SUGGESTIONS = ['real estate', 'M&A', 'litigation', 'founder', 'careers', 'conveyancing'];
+const SUGGESTIONS = ['real estate', 'M&A', 'litigation', 'founder', 'conveyancing'];
 
 export default function SearchModal({ open, onClose }) {
   const [q, setQ] = useState('');

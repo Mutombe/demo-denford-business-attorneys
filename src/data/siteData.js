@@ -641,55 +641,6 @@ export const insights = [
 ];
 
 // ============================================================
-// CAREERS
-// ============================================================
-export const careers = {
-  intro:
-    'DBA is a partner-centric boutique where every lawyer works directly on matters that matter. We attach great importance to professional development — a well-developed, holistic system of continued learning that allows our professionals to stand at the forefront of our specialist practice.',
-  culture: [
-    'Partner-led delivery — every matter directly overseen',
-    'Deep technical specialisation in real estate & commercial law',
-    'Technology-enabled practice — Clio, cloud document management',
-    'Structured mentorship and continued legal education',
-    'Access to teaching and publication opportunities',
-  ],
-  positions: [
-    {
-      title: 'Senior Associate — Real Estate & Commercial',
-      type: 'Full-time',
-      location: 'Harare',
-      years: '5+ years PQE',
-      summary:
-        'Lead complex conveyancing and development transactions. Mentor junior lawyers. Registered conveyancer preferred.',
-    },
-    {
-      title: 'Associate — Conveyancing & Notarial',
-      type: 'Full-time',
-      location: 'Harare',
-      years: '2–4 years PQE',
-      summary:
-        'Manage property transfers, bond registrations, and notarial acts with a senior conveyancer supervising complex matters.',
-    },
-    {
-      title: 'Compliance Advisory Associate',
-      type: 'Full-time',
-      location: 'Harare',
-      years: '2–5 years PQE',
-      summary:
-        'Support the compliance advisory practice — regulatory monitoring, municipal liaison, portfolio audits, client reporting.',
-    },
-    {
-      title: 'Legal Intern / Candidate Attorney',
-      type: 'Training Contract',
-      location: 'Harare',
-      years: 'LLB graduates',
-      summary:
-        'A structured two-year training contract rotating across the three pillars. Priority given to applicants with demonstrable interest in real estate.',
-    },
-  ],
-};
-
-// ============================================================
 // PROOF POINTS / STATS
 // ============================================================
 export const stats = [

@@ -135,19 +135,6 @@ export default function Attorneys() {
         </div>
       </section>
 
-      {/* Careers CTA */}
-      <section className="py-24 bg-bone-100">
-        <div className="max-w-[1480px] mx-auto px-5 md:px-10 text-center">
-          <SectionReveal>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-navy-900 display-tight max-w-2xl mx-auto">
-              Join a firm where <span className="italic text-gold-500">every</span> matter matters.
-            </h2>
-            <Link to="/careers" className="mt-8 inline-flex items-center gap-3 bg-navy-700 text-white px-8 py-5 font-display text-[0.74rem] tracking-[0.22em] uppercase font-semibold hover:bg-navy-900 transition-colors">
-              Careers at DBA <ArrowRight size={15} weight="bold" />
-            </Link>
-          </SectionReveal>
-        </div>
-      </section>
     </PageTransition>
   );
 }
