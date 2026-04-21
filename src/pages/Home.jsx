@@ -54,14 +54,14 @@ export default function Home() {
         {/* Grain overlay */}
         <div className="absolute inset-0 grain pointer-events-none"></div>
 
-        {/* Top-right brand sigil line */}
-        <div className="hidden md:flex absolute top-[108px] right-5 md:right-10 text-white/50 text-[0.62rem] tracking-[0.3em] uppercase font-display font-light flex-col items-end gap-2 z-10">
+        {/* Top brand sigil line — visible on mobile + desktop */}
+        <div className="absolute top-[88px] md:top-[108px] right-5 md:right-10 text-white/55 text-[0.58rem] md:text-[0.62rem] tracking-[0.28em] md:tracking-[0.3em] uppercase font-display font-light flex flex-col items-end gap-1.5 md:gap-2 z-10">
           <span>[ Est · Harare ]</span>
           <span>[ Zimbabwe ]</span>
         </div>
 
-        {/* Hero content */}
-        <div className="relative z-10 flex-1 flex items-end pt-[80px] md:pt-[100px] pb-6 md:pb-10">
+        {/* Hero content — centered on mobile, bottom-anchored on desktop */}
+        <div className="relative z-10 flex-1 flex items-center md:items-end pt-[96px] md:pt-[100px] pb-6 md:pb-10">
           <div className="max-w-[1480px] mx-auto px-5 md:px-10 w-full">
             <div className="grid grid-cols-12 gap-4 md:gap-8 items-end">
               <div className="col-span-12 lg:col-span-9">
