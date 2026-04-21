@@ -39,7 +39,9 @@ export default function PracticeAreaDetail() {
             src={area.image}
             alt={area.name}
             loading="eager"
-            onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=2000&q=80'; }}
+            fetchpriority="high"
+            decoding="async"
+            onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80'; }}
             className="w-full h-full object-cover object-center opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900/90 to-navy-800/70"></div>
@@ -110,6 +112,7 @@ export default function PracticeAreaDetail() {
                         src={attorneys[0].portrait}
                         alt={attorneys[0].name}
                         loading="lazy"
+                        decoding="async"
                         onError={(e) => { e.currentTarget.src = attorneys[0].portraitFallback; }}
                         className="w-16 h-16 object-cover object-center rounded-full"
                       />

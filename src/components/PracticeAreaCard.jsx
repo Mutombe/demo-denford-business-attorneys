@@ -46,6 +46,7 @@ export default function PracticeAreaCard({ area, variant = 'default' }) {
           src={area.image}
           alt={area.name}
           loading="lazy"
+          decoding="async"
           onError={(e) => { e.currentTarget.src = FALLBACK; }}
           className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-[1200ms]"
         />

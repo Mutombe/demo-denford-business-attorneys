@@ -51,9 +51,13 @@ export default function Navbar() {
             <Link to="/" className="flex items-center gap-3 group" aria-label="DBA Home">
               <img
                 src="/logo.png"
-                alt="DBA"
-                className={`h-9 md:h-11 w-auto object-contain transition-opacity ${overlayMode ? 'brightness-0 invert' : ''}`}
+                alt="Denford Business Attorneys"
+                width="48"
+                height="48"
+                className={`h-10 md:h-12 w-auto object-contain transition-opacity ${overlayMode ? 'brightness-0 invert' : ''}`}
                 loading="eager"
+                fetchpriority="high"
+                decoding="async"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
               <div className={`hidden md:flex flex-col leading-none ${overlayMode ? 'text-white' : 'text-navy-900'}`}>
@@ -120,7 +124,7 @@ export default function Navbar() {
             <div className="h-full flex flex-col">
               <div className="flex items-center justify-between px-5 md:px-10 h-[72px] md:h-[84px] border-b border-white/10">
                 <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-                  <img src="/logo.png" alt="DBA" className="h-9 w-auto object-contain brightness-0 invert" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+                  <img src="/logo.png" alt="Denford Business Attorneys" width="40" height="40" className="h-10 w-auto object-contain brightness-0 invert" decoding="async" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
                   <span className="text-white font-display font-black tracking-[0.08em] text-sm">DBA</span>
                 </Link>
                 <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-white p-2">

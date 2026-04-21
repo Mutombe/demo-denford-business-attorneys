@@ -33,8 +33,12 @@ export default function Footer() {
             <Link to="/" className="inline-flex items-center gap-3 mb-6">
               <img
                 src="/logo.png"
-                alt="DBA"
+                alt="Denford Business Attorneys"
+                width="52"
+                height="52"
                 className="h-12 w-auto object-contain brightness-0 invert"
+                loading="lazy"
+                decoding="async"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
               <div className="flex flex-col leading-none">

@@ -316,5 +316,17 @@ body {
 
 /* Mobile type sizing so hero doesn't overflow */
 @media (max-width: 640px) {
-  .hero-display { font-size: clamp(2.75rem, 14vw, 5rem) !important; }
+  .hero-display { font-size: clamp(2.5rem, 11vw, 4.25rem) !important; }
+}
+
+/* Prevent iOS input zoom — input font-size must be >= 16px */
+input, textarea, select {
+  font-size: 16px;
+}
+
+/* Ensure tap targets are at least 44px on interactive elements */
+@media (max-width: 640px) {
+  button, a[role="button"], .cta-btn {
+    min-height: 44px;
+  }
 }

@@ -17,9 +17,11 @@ export default function Firm() {
       <section className="relative pt-32 md:pt-48 pb-20 md:pb-28 bg-navy-950 text-white overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1505663912202-ac22d4cb3707?w=2000&q=80"
+            src="https://images.unsplash.com/photo-1505663912202-ac22d4cb3707?w=1600&q=80"
             alt=""
             loading="eager"
+            fetchpriority="high"
+            decoding="async"
             onError={(e) => { e.currentTarget.style.display = 'none'; }}
             className="w-full h-full object-cover object-center opacity-40"
           />

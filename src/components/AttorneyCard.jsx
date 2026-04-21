@@ -15,6 +15,7 @@ export default function AttorneyCard({ attorney, featured = false }) {
           src={attorney.portrait}
           alt={attorney.name}
           loading="lazy"
+          decoding="async"
           onError={(e) => { e.currentTarget.src = attorney.portraitFallback || FALLBACK; }}
           className="w-full h-full object-cover object-center grayscale-[30%] group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-[1200ms]"
         />

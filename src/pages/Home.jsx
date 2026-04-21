@@ -21,8 +21,9 @@ const iconMap = {
   CheckCircle, Lightbulb, ChartLineUp,
 };
 
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2000&q=85';
-const HERO_FALLBACK = 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=2000&q=85';
+const HERO_IMAGE = 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80';
+const HERO_IMAGE_MOBILE = 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=75';
+const HERO_FALLBACK = 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80';
 
 export default function Home() {
   return (
@@ -32,14 +33,18 @@ export default function Home() {
         description="A Harare-based boutique firm built exclusively around real estate and commercial law. Solutions. Value. Growth."
       />
 
-      {/* ============ HERO — EDITORIAL DRAMATIC ============ */}
-      <section className="relative min-h-[100vh] md:min-h-[105vh] flex flex-col overflow-hidden bg-navy-950">
-        {/* Background imagery */}
+      {/* ============ HERO — EDITORIAL DRAMATIC (viewport-fit) ============ */}
+      <section className="relative h-[100svh] min-h-[640px] flex flex-col overflow-hidden bg-navy-950">
+        {/* Background imagery — responsive srcset, eager + high priority */}
         <div className="absolute inset-0">
           <img
             src={HERO_IMAGE}
+            srcSet={`${HERO_IMAGE_MOBILE} 800w, ${HERO_IMAGE} 1600w`}
+            sizes="(max-width: 768px) 100vw, 1600px"
             alt="Modern architectural interior"
             loading="eager"
+            fetchpriority="high"
+            decoding="async"
             onError={(e) => { e.currentTarget.src = HERO_FALLBACK; }}
             className="w-full h-full object-cover object-center"
           />
@@ -50,13 +55,13 @@ export default function Home() {
         <div className="absolute inset-0 grain pointer-events-none"></div>
 
         {/* Top-right brand sigil line */}
-        <div className="absolute top-[108px] md:top-[130px] right-5 md:right-10 text-white/50 text-[0.62rem] tracking-[0.3em] uppercase font-display font-light flex flex-col items-end gap-2">
+        <div className="hidden md:flex absolute top-[108px] right-5 md:right-10 text-white/50 text-[0.62rem] tracking-[0.3em] uppercase font-display font-light flex-col items-end gap-2 z-10">
           <span>[ Est · Harare ]</span>
           <span>[ Zimbabwe ]</span>
         </div>
 
         {/* Hero content */}
-        <div className="relative z-10 flex-1 flex items-end pt-28 md:pt-36 pb-16 md:pb-24">
+        <div className="relative z-10 flex-1 flex items-end pt-[80px] md:pt-[100px] pb-6 md:pb-10">
           <div className="max-w-[1480px] mx-auto px-5 md:px-10 w-full">
             <div className="grid grid-cols-12 gap-4 md:gap-8 items-end">
               <div className="col-span-12 lg:col-span-9">
@@ -66,21 +71,21 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, ease: 'easeOut' }}
                 >
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-px bg-gold-500"></div>
-                    <p className="text-gold-400 font-display text-[0.72rem] tracking-[0.3em] uppercase font-medium">
+                  <div className="flex items-center gap-3 mb-4 md:mb-5">
+                    <div className="w-10 md:w-16 h-px bg-gold-500"></div>
+                    <p className="text-gold-400 font-display text-[0.65rem] md:text-[0.72rem] tracking-[0.3em] uppercase font-medium">
                       {firm.subTagline}
                     </p>
                   </div>
                 </motion.div>
 
-                {/* Massive editorial headline */}
+                {/* Massive editorial headline — responsive clamp */}
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                  className="hero-display font-display font-black text-white display-tight text-[5.5rem] md:text-[8rem] lg:text-[10rem] xl:text-[11.5rem]"
-                  style={{ lineHeight: 0.88 }}
+                  className="hero-display font-display font-black text-white display-tight"
+                  style={{ fontSize: 'clamp(3rem, 9vw, 8rem)', lineHeight: 0.88 }}
                 >
                   Solutions.<br />
                   <span className="italic font-semibold text-gold-400">Value.</span><br />
@@ -92,7 +97,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.4 }}
-                  className="mt-10 md:mt-14 font-serif text-white/85 text-lg md:text-2xl leading-[1.5] max-w-2xl text-balance"
+                  className="mt-5 md:mt-7 font-serif text-white/85 text-base sm:text-lg md:text-xl leading-[1.5] max-w-2xl text-balance"
                 >
                   Legal partners who think like investors. A Harare-based boutique firm built exclusively around real estate and commercial law.
                 </motion.p>
@@ -102,37 +107,37 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.55 }}
-                  className="mt-10 flex flex-wrap items-center gap-4"
+                  className="mt-6 md:mt-8 flex flex-wrap items-center gap-3"
                 >
                   <Link
                     to="/contact"
-                    className="group inline-flex items-center gap-3 bg-white text-navy-900 px-8 py-5 font-display text-[0.74rem] tracking-[0.22em] uppercase font-semibold hover:bg-gold-400 transition-colors"
+                    className="group inline-flex items-center gap-3 bg-white text-navy-900 px-6 md:px-8 py-4 font-display text-[0.72rem] md:text-[0.74rem] tracking-[0.22em] uppercase font-semibold hover:bg-gold-400 transition-colors min-h-[44px]"
                   >
-                    Book Strategic Consultation
-                    <ArrowRight size={15} weight="bold" className="group-hover:translate-x-1 transition-transform" />
+                    Book Consultation
+                    <ArrowRight size={14} weight="bold" className="group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <Link
                     to="/practice-areas"
-                    className="group inline-flex items-center gap-3 border border-white/30 text-white px-8 py-5 font-display text-[0.74rem] tracking-[0.22em] uppercase font-semibold hover:border-white hover:bg-white/10 transition-all"
+                    className="group inline-flex items-center gap-3 border border-white/30 text-white px-6 md:px-8 py-4 font-display text-[0.72rem] md:text-[0.74rem] tracking-[0.22em] uppercase font-semibold hover:border-white hover:bg-white/10 transition-all min-h-[44px]"
                   >
                     Explore Practice
-                    <ArrowRight size={15} weight="bold" className="group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={14} weight="bold" className="group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </motion.div>
               </div>
 
-              {/* Side rail — three pillars mini */}
+              {/* Side rail — three pillars mini (desktop only) */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="hidden lg:flex col-span-3 flex-col gap-6 pl-8 border-l border-white/20"
+                className="hidden lg:flex col-span-3 flex-col gap-4 pl-8 border-l border-white/20"
               >
-                <p className="text-white/60 font-display text-[0.68rem] tracking-[0.3em] uppercase">Three Pillars</p>
+                <p className="text-white/60 font-display text-[0.65rem] tracking-[0.3em] uppercase">Three Pillars</p>
                 {pillars.map((p) => (
                   <div key={p.number}>
-                    <span className="text-gold-400 font-display text-[0.7rem] tracking-[0.22em] font-light">{p.number}</span>
-                    <p className="text-white font-display font-bold text-sm mt-1 leading-tight">{p.name}</p>
+                    <span className="text-gold-400 font-display text-[0.68rem] tracking-[0.22em] font-light">{p.number}</span>
+                    <p className="text-white font-display font-bold text-[0.82rem] mt-1 leading-tight">{p.name}</p>
                   </div>
                 ))}
               </motion.div>
@@ -141,19 +146,19 @@ export default function Home() {
         </div>
 
         {/* Hero bottom ticker */}
-        <div className="relative z-10 border-t border-white/15 bg-navy-950/50 backdrop-blur-sm">
-          <div className="max-w-[1480px] mx-auto px-5 md:px-10 py-5 md:py-6">
-            <div className="flex items-center justify-between gap-6 flex-wrap">
-              <div className="flex items-center gap-3 text-white/60 text-[0.7rem] tracking-[0.22em] uppercase font-display">
-                <ArrowDown size={14} weight="regular" className="animate-bounce" />
+        <div className="relative z-10 border-t border-white/15 bg-navy-950/50 backdrop-blur-sm shrink-0">
+          <div className="max-w-[1480px] mx-auto px-5 md:px-10 py-3 md:py-4">
+            <div className="flex items-center justify-between gap-4 flex-wrap">
+              <div className="flex items-center gap-2 text-white/60 text-[0.65rem] md:text-[0.7rem] tracking-[0.22em] uppercase font-display">
+                <ArrowDown size={12} weight="regular" className="animate-bounce" />
                 Scroll
               </div>
-              <div className="flex items-center gap-8 md:gap-12 text-white font-display text-[0.7rem] tracking-[0.22em] uppercase">
+              <div className="flex items-center gap-4 md:gap-10 text-white font-display text-[0.62rem] md:text-[0.7rem] tracking-[0.22em] uppercase">
                 <span className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-gold-500 rounded-full"></span>
                   Conveyancer
                 </span>
-                <span className="flex items-center gap-2">
+                <span className="hidden sm:flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-gold-500 rounded-full"></span>
                   Notary Public
                 </span>
@@ -305,6 +310,7 @@ export default function Home() {
                     src={attorneys[0].portrait}
                     alt={attorneys[0].name}
                     loading="lazy"
+                    decoding="async"
                     onError={(e) => { e.currentTarget.src = attorneys[0].portraitFallback; }}
                     className="w-full h-full object-cover object-center"
                   />
@@ -496,6 +502,7 @@ export default function Home() {
                       src={tier.image}
                       alt={tier.heading}
                       loading="lazy"
+                      decoding="async"
                       onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1400&q=80'; }}
                       className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-[1000ms]"
                     />
@@ -595,9 +602,10 @@ export default function Home() {
       <section className="relative py-28 md:py-40 bg-navy-900 text-white overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=2000&q=80"
+            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=75"
             alt=""
             loading="lazy"
+            decoding="async"
             onError={(e) => { e.currentTarget.style.display = 'none'; }}
             className="w-full h-full object-cover object-center opacity-30"
           />

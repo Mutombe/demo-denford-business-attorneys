@@ -41,6 +41,8 @@ export default function Attorneys() {
                     src={attorneys[0].portrait}
                     alt={attorneys[0].name}
                     loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
                     onError={(e) => { e.currentTarget.src = attorneys[0].portraitFallback; }}
                     className="w-full h-full object-cover object-center"
                   />

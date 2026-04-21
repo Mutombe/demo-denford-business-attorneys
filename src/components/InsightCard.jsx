@@ -14,6 +14,7 @@ export default function InsightCard({ insight, variant = 'default' }) {
               src={insight.image}
               alt={insight.title}
               loading="lazy"
+              decoding="async"
               onError={(e) => { e.currentTarget.src = FALLBACK; }}
               className="w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-[1200ms]"
             />

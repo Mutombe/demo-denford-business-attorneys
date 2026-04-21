@@ -44,6 +44,8 @@ export default function AttorneyDetail() {
                   src={attorney.portrait}
                   alt={attorney.name}
                   loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
                   onError={(e) => { e.currentTarget.src = attorney.portraitFallback; }}
                   className="w-full h-full object-cover object-center"
                 />

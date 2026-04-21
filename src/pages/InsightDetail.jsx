@@ -62,6 +62,8 @@ export default function InsightDetail() {
               src={insight.image}
               alt={insight.title}
               loading="eager"
+              fetchpriority="high"
+              decoding="async"
               onError={(e) => { e.currentTarget.src = 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1400&q=80'; }}
               className="w-full h-full object-cover object-center"
             />
