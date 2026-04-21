@@ -17,43 +17,41 @@ export default function PracticeAreaCard({ area, variant = 'default' }) {
   if (variant === 'minimal') {
     return (
       <div className="relative block group border-t border-steel-300 py-8 md:py-10 transition-colors hover:border-gold-500">
-        <Link
-          to={`/practice-areas/${area.slug}`}
-          className="block"
-        >
-          <div className="grid grid-cols-12 gap-4 items-start">
-            <div className="col-span-2 md:col-span-1">
-              <span className="font-display font-light text-steel-400 text-[0.72rem] tracking-[0.2em]">{area.number}</span>
-            </div>
-            <div className="col-span-10 md:col-span-7">
-              <span className="index-label text-gold-500">{area.pillar}</span>
-              <h3 className="mt-2 font-display font-bold text-2xl md:text-3xl text-navy-900 group-hover:text-navy-700 transition-colors display-tight">
-                {area.name}
-              </h3>
-            </div>
-            <div className="hidden md:block md:col-span-3">
-              <p className="font-serif text-ink-500 text-[0.95rem] leading-relaxed">
-                {area.short}
-              </p>
-            </div>
-            <div className="col-span-12 md:col-span-1 flex md:justify-end items-start mt-4 md:mt-0 gap-2">
-              <span className="inline-flex items-center justify-center h-11 w-11 border border-navy-700 text-navy-700 group-hover:bg-navy-700 group-hover:text-white transition-all">
-                <ArrowRight size={16} weight="bold" />
-              </span>
-            </div>
+        <div className="grid grid-cols-12 gap-4 items-start">
+          <div className="col-span-2 md:col-span-1">
+            <span className="font-display font-light text-steel-400 text-[0.72rem] tracking-[0.2em]">{area.number}</span>
           </div>
-        </Link>
-        <a
-          href={waHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          aria-label={`Discuss ${area.name} on WhatsApp`}
-          className="absolute top-8 md:top-10 right-12 md:right-16 inline-flex items-center justify-center h-10 w-10 text-white hover:brightness-110 transition-all z-10"
-          style={{ backgroundColor: '#25D366' }}
-        >
-          <WhatsappLogo size={14} weight="fill" />
-        </a>
+          <Link to={`/practice-areas/${area.slug}`} className="col-span-10 md:col-span-7 block">
+            <span className="index-label text-gold-500">{area.pillar}</span>
+            <h3 className="mt-2 font-display font-bold text-2xl md:text-3xl text-navy-900 group-hover:text-navy-700 transition-colors display-tight">
+              {area.name}
+            </h3>
+          </Link>
+          <div className="hidden md:block md:col-span-3">
+            <p className="font-serif text-ink-500 text-[0.95rem] leading-relaxed">
+              {area.short}
+            </p>
+          </div>
+          <div className="col-span-12 md:col-span-1 flex items-center md:justify-end gap-2.5 mt-4 md:mt-0">
+            <Link
+              to={`/practice-areas/${area.slug}`}
+              aria-label={`Explore ${area.name}`}
+              className="inline-flex items-center justify-center h-11 w-11 border border-navy-700 text-navy-700 hover:bg-navy-700 hover:text-white transition-all"
+            >
+              <ArrowRight size={16} weight="bold" />
+            </Link>
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Discuss ${area.name} on WhatsApp`}
+              className="inline-flex items-center justify-center h-11 w-11 text-white hover:brightness-110 transition-all"
+              style={{ backgroundColor: '#25D366' }}
+            >
+              <WhatsappLogo size={16} weight="fill" />
+            </a>
+          </div>
+        </div>
       </div>
     );
   }
@@ -78,7 +76,7 @@ export default function PracticeAreaCard({ area, variant = 'default' }) {
             {area.number}
           </span>
         </div>
-        <div className="p-6 md:p-7">
+        <div className="p-6 md:p-7 pb-5 md:pb-6">
           <span className="index-label text-gold-500">{area.pillar}</span>
           <h3 className="mt-2 font-display font-bold text-xl md:text-2xl text-navy-900 display-tight leading-tight">
             {area.name}
@@ -86,23 +84,29 @@ export default function PracticeAreaCard({ area, variant = 'default' }) {
           <p className="mt-3 font-serif text-ink-500 text-[0.9rem] leading-relaxed line-clamp-3">
             {area.short}
           </p>
-          <div className="mt-5 flex items-center gap-2 font-display text-[0.72rem] tracking-[0.22em] uppercase font-semibold text-navy-700 group-hover:text-gold-500 transition-colors">
-            <span>Explore Practice</span>
-            <ArrowRight size={14} weight="bold" className="group-hover:translate-x-1 transition-transform" />
-          </div>
         </div>
       </Link>
-      <a
-        href={waHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={(e) => e.stopPropagation()}
-        aria-label={`Discuss ${area.name} on WhatsApp`}
-        className="absolute top-4 right-4 inline-flex items-center justify-center h-10 w-10 text-white shadow-md hover:brightness-110 transition-all z-10"
-        style={{ backgroundColor: '#25D366' }}
-      >
-        <WhatsappLogo size={15} weight="fill" />
-      </a>
+      {/* Action footer — Explore Practice ←→ WhatsApp (outside the Link, so WA doesn't trigger nav) */}
+      <div className="px-6 md:px-7 pb-6 md:pb-7 flex items-center justify-between gap-3">
+        <Link
+          to={`/practice-areas/${area.slug}`}
+          className="inline-flex items-center gap-2 font-display text-[0.72rem] tracking-[0.22em] uppercase font-semibold text-navy-700 group-hover:text-gold-500 transition-colors"
+        >
+          <span>Explore Practice</span>
+          <ArrowRight size={14} weight="bold" className="group-hover:translate-x-1 transition-transform" />
+        </Link>
+        <a
+          href={waHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          aria-label={`Discuss ${area.name} on WhatsApp`}
+          className="shrink-0 inline-flex items-center justify-center h-10 w-10 text-white hover:brightness-110 transition-all"
+          style={{ backgroundColor: '#25D366' }}
+        >
+          <WhatsappLogo size={16} weight="fill" />
+        </a>
+      </div>
     </div>
   );
 }
