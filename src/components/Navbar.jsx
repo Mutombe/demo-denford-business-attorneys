@@ -14,7 +14,8 @@ const NAV_LINKS = [
   { to: '/attorneys', label: 'Attorneys' },
   { to: '/clients', label: 'Clients' },
   { to: '/insights', label: 'Insights' },
-  { to: '/contact', label: 'Contact' },
+  // Hidden on desktop (the "Consultation" CTA already links to /contact); kept in the mobile menu
+  { to: '/contact', label: 'Contact', desktopHide: true },
 ];
 
 export default function Navbar({ onOpenSearch }) {
@@ -71,7 +72,7 @@ export default function Navbar({ onOpenSearch }) {
 
             {/* Desktop nav */}
             <nav className="hidden lg:flex items-center gap-9">
-              {NAV_LINKS.map((link) => (
+              {NAV_LINKS.filter((link) => !link.desktopHide).map((link) => (
                 <NavLink
                   key={link.to}
                   to={link.to}
