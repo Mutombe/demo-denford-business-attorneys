@@ -76,13 +76,13 @@ export default function SearchModal({ open, onClose }) {
         <button
           onClick={onClose}
           aria-label="Close search"
-          className="absolute top-6 right-5 md:top-8 md:right-10 h-11 w-11 flex items-center justify-center text-navy-900 hover:text-gold-500 transition-colors"
+          className="absolute top-6 right-5 md:top-8 md:right-10 h-11 w-11 flex items-center justify-center text-navy-900 hover:text-accent-500 transition-colors"
           style={{ borderRadius: 0 }}
         >
           <X size={22} weight="regular" />
         </button>
 
-        <p className="index-label text-gold-500 text-center mt-10">Search DBA</p>
+        <p className="index-label text-accent-500 text-center mt-10">Search DBA</p>
         <div className="relative mt-4 max-w-3xl mx-auto">
           <MagnifyingGlass
             size={24}
@@ -121,14 +121,14 @@ export default function SearchModal({ open, onClose }) {
 
               <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                  <p className="index-label text-gold-500 mb-4">Quick links</p>
+                  <p className="index-label text-accent-500 mb-4">Quick links</p>
                   <ul className="space-y-2">
                     {PAGES.slice(0, 4).map((p) => (
                       <li key={p.path}>
                         <Link
                           to={p.path}
                           onClick={onClose}
-                          className="font-display text-base text-navy-900 hover:text-gold-500 link-reveal"
+                          className="font-display text-base text-navy-900 hover:text-accent-500 link-reveal"
                         >
                           {p.name}
                         </Link>
@@ -137,14 +137,14 @@ export default function SearchModal({ open, onClose }) {
                   </ul>
                 </div>
                 <div>
-                  <p className="index-label text-gold-500 mb-4">Popular practices</p>
+                  <p className="index-label text-accent-500 mb-4">Popular practices</p>
                   <ul className="space-y-2">
                     {practiceAreas.slice(0, 4).map((p) => (
                       <li key={p.slug}>
                         <Link
                           to={`/practice-areas/${p.slug}`}
                           onClick={onClose}
-                          className="font-display text-base text-navy-900 hover:text-gold-500 link-reveal"
+                          className="font-display text-base text-navy-900 hover:text-accent-500 link-reveal"
                         >
                           {p.name}
                         </Link>
@@ -153,14 +153,14 @@ export default function SearchModal({ open, onClose }) {
                   </ul>
                 </div>
                 <div>
-                  <p className="index-label text-gold-500 mb-4">Recent insights</p>
+                  <p className="index-label text-accent-500 mb-4">Recent insights</p>
                   <ul className="space-y-2">
                     {insights.slice(0, 4).map((i) => (
                       <li key={i.slug}>
                         <Link
                           to={`/insights/${i.slug}`}
                           onClick={onClose}
-                          className="font-display text-[0.95rem] text-navy-900 hover:text-gold-500 link-reveal leading-snug"
+                          className="font-display text-[0.95rem] text-navy-900 hover:text-accent-500 link-reveal leading-snug"
                         >
                           {i.title}
                         </Link>
@@ -176,7 +176,7 @@ export default function SearchModal({ open, onClose }) {
           {q.trim() && results && results.total === 0 && (
             <div className="text-center py-16 max-w-xl mx-auto">
               <p className="font-display font-black text-4xl md:text-5xl text-navy-900 display-tight">
-                Nothing matches<span className="italic font-semibold text-gold-500"> — yet.</span>
+                Nothing matches<span className="italic font-semibold text-accent-500"> — yet.</span>
               </p>
               <p className="mt-5 font-serif text-ink-500 text-base leading-relaxed">
                 Our scope may span your brief even if the keyword doesn't. Tell us what you're looking for directly.
@@ -185,7 +185,7 @@ export default function SearchModal({ open, onClose }) {
                 href={waFallback}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-8 px-7 py-4 bg-navy-900 text-white font-display text-[0.72rem] tracking-[0.22em] uppercase font-bold hover:bg-gold-500 hover:text-navy-900 transition-colors"
+                className="inline-flex items-center gap-2 mt-8 px-7 py-4 bg-navy-900 text-white font-display text-[0.72rem] tracking-[0.22em] uppercase font-bold hover:bg-accent-500 hover:text-navy-900 transition-colors"
                 style={{ borderRadius: 0 }}
               >
                 <WhatsappLogo size={16} weight="fill" />
@@ -205,7 +205,7 @@ export default function SearchModal({ open, onClose }) {
               {results.practices.length > 0 && (
                 <section>
                   <div className="flex items-baseline justify-between mb-5 border-b border-steel-200 pb-3">
-                    <h3 className="index-label text-gold-500">Practice Areas</h3>
+                    <h3 className="index-label text-accent-500">Practice Areas</h3>
                     <span className="font-display text-[0.7rem] tracking-[0.18em] uppercase text-ink-400">
                       {results.practices.length}
                     </span>
@@ -234,7 +234,7 @@ export default function SearchModal({ open, onClose }) {
               {results.attorneys.length > 0 && (
                 <section>
                   <div className="flex items-baseline justify-between mb-5 border-b border-steel-200 pb-3">
-                    <h3 className="index-label text-gold-500">Attorneys</h3>
+                    <h3 className="index-label text-accent-500">Attorneys</h3>
                     <span className="font-display text-[0.7rem] tracking-[0.18em] uppercase text-ink-400">
                       {results.attorneys.length}
                     </span>
@@ -263,7 +263,7 @@ export default function SearchModal({ open, onClose }) {
               {results.insights.length > 0 && (
                 <section>
                   <div className="flex items-baseline justify-between mb-5 border-b border-steel-200 pb-3">
-                    <h3 className="index-label text-gold-500">Insights</h3>
+                    <h3 className="index-label text-accent-500">Insights</h3>
                     <span className="font-display text-[0.7rem] tracking-[0.18em] uppercase text-ink-400">
                       {results.insights.length}
                     </span>
@@ -295,7 +295,7 @@ export default function SearchModal({ open, onClose }) {
               {results.pages.length > 0 && (
                 <section>
                   <div className="flex items-baseline justify-between mb-5 border-b border-steel-200 pb-3">
-                    <h3 className="index-label text-gold-500">Pages</h3>
+                    <h3 className="index-label text-accent-500">Pages</h3>
                     <span className="font-display text-[0.7rem] tracking-[0.18em] uppercase text-ink-400">
                       {results.pages.length}
                     </span>
@@ -330,7 +330,7 @@ export default function SearchModal({ open, onClose }) {
                   href={waFallback}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 text-navy-900 font-display text-[0.72rem] tracking-[0.22em] uppercase font-bold border-b border-navy-900 hover:border-gold-500 hover:text-gold-500 transition-colors pb-0.5"
+                  className="inline-flex items-center gap-2 mt-4 text-navy-900 font-display text-[0.72rem] tracking-[0.22em] uppercase font-bold border-b border-navy-900 hover:border-accent-500 hover:text-accent-500 transition-colors pb-0.5"
                 >
                   <WhatsappLogo size={14} weight="fill" />
                   Message DBA on WhatsApp

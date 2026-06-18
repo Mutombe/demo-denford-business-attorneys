@@ -22,7 +22,7 @@ export default function Attorneys() {
           </div>
           <span className="index-label">Our People</span>
           <h1 className="mt-4 font-display font-black text-5xl md:text-7xl lg:text-[7rem] text-navy-900 display-tight">
-            Partner-led. <span className="italic font-semibold text-gold-500">Always.</span>
+            Partner-led. <span className="italic font-semibold text-accent-500">Always.</span>
           </h1>
           <p className="mt-8 font-serif text-ink-500 text-lg md:text-xl max-w-3xl leading-relaxed">
             Every matter at DBA is directly overseen by a Partner. Meet the team behind the practice.
@@ -115,7 +115,7 @@ export default function Attorneys() {
           <div className="grid grid-cols-12 gap-8 items-start">
             <div className="col-span-12 md:col-span-5">
               <SectionReveal>
-                <span className="index-label text-gold-400">03 · Continued Learning</span>
+                <span className="index-label text-accent-400">03 · Continued Learning</span>
                 <h2 className="mt-5 font-display font-black text-4xl md:text-5xl display-tight">
                   At the forefront of our practice.
                 </h2>

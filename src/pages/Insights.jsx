@@ -35,7 +35,7 @@ export default function Insights() {
           </div>
           <span className="index-label">From the Firm</span>
           <h1 className="mt-4 font-display font-black text-5xl md:text-7xl lg:text-[7rem] text-navy-900 display-tight">
-            Reading the legal <span className="italic font-semibold text-gold-500">landscape.</span>
+            Reading the legal <span className="italic font-semibold text-accent-500">landscape.</span>
           </h1>
           <p className="mt-8 font-serif text-ink-500 text-lg md:text-xl max-w-3xl leading-relaxed">
             Perspective and commentary on Zimbabwe's real estate, compliance, and business law from the partners and associates at DBA.
@@ -103,7 +103,7 @@ export default function Insights() {
       <section className="py-24 bg-navy-950 text-white">
         <div className="max-w-[1480px] mx-auto px-5 md:px-10 text-center">
           <SectionReveal>
-            <span className="index-label text-gold-400">Stay Informed</span>
+            <span className="index-label text-accent-400">Stay Informed</span>
             <h2 className="mt-4 font-display font-black text-4xl md:text-5xl display-tight max-w-2xl mx-auto">
               Get DBA insights in your inbox.
             </h2>
@@ -116,7 +116,7 @@ export default function Insights() {
                 placeholder="your email"
                 className="flex-1 px-5 py-4 bg-white text-navy-900 font-body text-base focus:outline-none"
               />
-              <button type="submit" className="bg-gold-500 text-navy-900 px-6 py-4 font-display text-[0.72rem] tracking-[0.22em] uppercase font-bold hover:bg-gold-400 transition-colors">
+              <button type="submit" className="bg-accent-500 text-navy-900 px-6 py-4 font-display text-[0.72rem] tracking-[0.22em] uppercase font-bold hover:bg-accent-400 transition-colors">
                 Subscribe
               </button>
             </form>

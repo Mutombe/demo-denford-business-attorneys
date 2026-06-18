@@ -104,7 +104,7 @@ export default function AttorneyDetail() {
                 {attorney.credentials && attorney.credentials.length > 0 && (
                   <SectionReveal>
                     <div className="border border-steel-300 p-7">
-                      <GraduationCap size={22} className="text-gold-500 mb-4" weight="regular" />
+                      <GraduationCap size={22} className="text-accent-500 mb-4" weight="regular" />
                       <span className="index-label">Credentials</span>
                       <ul className="mt-4 space-y-2.5">
                         {attorney.credentials.map((c) => (
@@ -118,11 +118,11 @@ export default function AttorneyDetail() {
                 {attorney.memberships && attorney.memberships.length > 0 && (
                   <SectionReveal delay={100}>
                     <div className="border border-steel-300 p-7">
-                      <Star size={22} className="text-gold-500 mb-4" weight="regular" />
+                      <Star size={22} className="text-accent-500 mb-4" weight="regular" />
                       <span className="index-label">Memberships</span>
                       <ul className="mt-4 space-y-3">
                         {attorney.memberships.map((m) => (
-                          <li key={m} className="font-serif text-ink-600 text-[0.88rem] leading-relaxed pl-4 border-l-2 border-gold-500/40">{m}</li>
+                          <li key={m} className="font-serif text-ink-600 text-[0.88rem] leading-relaxed pl-4 border-l-2 border-accent-500/40">{m}</li>
                         ))}
                       </ul>
                     </div>
@@ -132,8 +132,8 @@ export default function AttorneyDetail() {
                 {attorney.teaches && (
                   <SectionReveal delay={150}>
                     <div className="bg-navy-900 text-white p-7">
-                      <Briefcase size={22} className="text-gold-400 mb-4" weight="regular" />
-                      <span className="index-label text-gold-400">Teaches</span>
+                      <Briefcase size={22} className="text-accent-400 mb-4" weight="regular" />
+                      <span className="index-label text-accent-400">Teaches</span>
                       <p className="mt-3 font-serif text-white/90 text-[0.95rem] leading-relaxed">{attorney.teaches}</p>
                     </div>
                   </SectionReveal>

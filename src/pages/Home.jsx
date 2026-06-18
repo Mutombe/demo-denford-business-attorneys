@@ -65,31 +65,29 @@ export default function Home() {
           <div className="max-w-[1480px] mx-auto px-5 md:px-10 w-full">
             <div className="grid grid-cols-12 gap-4 md:gap-8 items-end">
               <div className="col-span-12 lg:col-span-9">
-                {/* Pre-title */}
+                {/* Eyebrow — Solutions • Value • Growth (one line) */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, ease: 'easeOut' }}
                 >
                   <div className="flex items-center gap-3 mb-4 md:mb-5">
-                    <div className="w-10 md:w-16 h-px bg-gold-500"></div>
-                    <p className="text-gold-400 font-display text-[0.65rem] md:text-[0.72rem] tracking-[0.3em] uppercase font-medium">
-                      {firm.subTagline}
+                    <div className="w-10 md:w-16 h-px bg-accent-500"></div>
+                    <p className="text-white/90 font-display text-[0.68rem] md:text-[0.78rem] tracking-[0.3em] uppercase font-semibold whitespace-nowrap">
+                      Solutions <span className="text-steel-400">•</span> <span className="text-steel-400">Value</span> <span className="text-steel-400">•</span> Growth
                     </p>
                   </div>
                 </motion.div>
 
-                {/* Massive editorial headline — responsive clamp */}
+                {/* Payoff line — the line we want clients to remember */}
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                  className="hero-display font-display font-black text-white display-tight"
-                  style={{ fontSize: 'clamp(3rem, 9vw, 8rem)', lineHeight: 0.88 }}
+                  className="hero-display font-display font-black text-white display-tight text-balance"
+                  style={{ fontSize: 'clamp(2.5rem, 7.4vw, 6rem)', lineHeight: 0.98 }}
                 >
-                  Solutions.<br />
-                  <span className="italic font-semibold text-gold-400">Value.</span><br />
-                  Growth.
+                  Full Service Real Estate Law.
                 </motion.h1>
 
                 {/* Subhead */}
@@ -111,7 +109,7 @@ export default function Home() {
                 >
                   <Link
                     to="/contact"
-                    className="group inline-flex items-center gap-3 bg-white text-navy-900 px-6 md:px-8 py-4 font-display text-[0.72rem] md:text-[0.74rem] tracking-[0.22em] uppercase font-semibold hover:bg-gold-400 transition-colors min-h-[44px]"
+                    className="group inline-flex items-center gap-3 bg-white text-navy-900 px-6 md:px-8 py-4 font-display text-[0.72rem] md:text-[0.74rem] tracking-[0.22em] uppercase font-semibold hover:bg-accent-400 transition-colors min-h-[44px]"
                   >
                     Book Consultation
                     <ArrowRight size={14} weight="bold" className="group-hover:translate-x-1 transition-transform" />
@@ -136,7 +134,7 @@ export default function Home() {
                 <p className="text-white/60 font-display text-[0.65rem] tracking-[0.3em] uppercase">Three Pillars</p>
                 {pillars.map((p) => (
                   <div key={p.number}>
-                    <span className="text-gold-400 font-display text-[0.68rem] tracking-[0.22em] font-light">{p.number}</span>
+                    <span className="text-accent-400 font-display text-[0.68rem] tracking-[0.22em] font-light">{p.number}</span>
                     <p className="text-white font-display font-bold text-[0.82rem] mt-1 leading-tight">{p.name}</p>
                   </div>
                 ))}
@@ -155,19 +153,19 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-4 md:gap-10 text-white font-display text-[0.62rem] md:text-[0.7rem] tracking-[0.22em] uppercase">
                 <span className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-gold-500 rounded-full"></span>
+                  <span className="w-1.5 h-1.5 bg-accent-500 rounded-full"></span>
                   Conveyancer
                 </span>
                 <span className="hidden sm:flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-gold-500 rounded-full"></span>
+                  <span className="w-1.5 h-1.5 bg-accent-500 rounded-full"></span>
                   Notary Public
                 </span>
                 <span className="hidden md:flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-gold-500 rounded-full"></span>
+                  <span className="w-1.5 h-1.5 bg-accent-500 rounded-full"></span>
                   Reg. Valuer
                 </span>
                 <span className="hidden lg:flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-gold-500 rounded-full"></span>
+                  <span className="w-1.5 h-1.5 bg-accent-500 rounded-full"></span>
                   Reg. Estate Agent
                 </span>
               </div>
@@ -183,17 +181,20 @@ export default function Home() {
             <div className="col-span-12 md:col-span-4">
               <SectionReveal>
                 <span className="index-label">01 · Overture</span>
-                <h2 className="mt-5 font-display font-black text-4xl md:text-5xl text-navy-900 display-tight">
+                <h2
+                  className="mt-5 font-display font-black text-navy-900 display-tight whitespace-nowrap"
+                  style={{ fontSize: 'clamp(1.25rem, 6vw, 3rem)' }}
+                >
                   More than a conveyancer.
                 </h2>
-                <p className="mt-4 font-serif italic text-ink-500 text-lg">
+                <p className="mt-4 font-display font-semibold text-navy-800 text-xl md:text-2xl leading-snug">
                   You need a legal partner who thinks like an investor.
                 </p>
               </SectionReveal>
             </div>
             <div className="col-span-12 md:col-span-7 md:col-start-6">
               <SectionReveal delay={120}>
-                <p className="font-serif text-ink-700 text-xl md:text-2xl leading-[1.55] text-balance">
+                <p className="font-body text-ink-500 text-base md:text-lg leading-[1.75]">
                   If real estate is at the centre of your business — whether you're acquiring your first commercial property, structuring a multi-project development, or managing a growing portfolio — you need more than a conveyancer.
                 </p>
                 <p className="mt-6 font-body text-ink-500 text-base md:text-lg leading-[1.75]">
@@ -219,10 +220,10 @@ export default function Home() {
         <div className="max-w-[1480px] mx-auto px-5 md:px-10 relative z-10">
           <div className="max-w-3xl mb-16 md:mb-24">
             <SectionReveal>
-              <span className="index-label text-gold-400">02 · Architecture</span>
+              <span className="index-label text-accent-400">02 · Architecture</span>
               <h2 className="mt-5 font-display font-black text-5xl md:text-7xl display-tight">
                 Three pillars, <br />
-                <span className="italic font-semibold text-gold-400">one integrated</span> practice.
+                <span className="italic font-semibold text-accent-400">one integrated</span> practice.
               </h2>
               <p className="mt-6 font-serif text-white/80 text-lg md:text-xl leading-relaxed">
                 Where strategy meets specialisation. Our services are structured under three interconnected pillars — designed to cover the full spectrum of real estate and commercial transactions, ensuring seamless expert advice across all facets of client work.
@@ -234,7 +235,7 @@ export default function Home() {
             {pillars.map((pillar, idx) => (
               <SectionReveal key={pillar.number} delay={idx * 100} className={`group p-8 md:p-12 border-b md:border-b-0 border-white/15 ${idx < 2 ? 'md:border-r' : ''} hover:bg-white/5 transition-colors`}>
                 <div className="flex items-start justify-between mb-8">
-                  <span className="font-display font-light text-gold-400 text-[0.72rem] tracking-[0.3em]">PILLAR {pillar.number}</span>
+                  <span className="font-display font-light text-accent-400 text-[0.72rem] tracking-[0.3em]">PILLAR {pillar.number}</span>
                   <div className="w-10 h-10 border border-white/25 flex items-center justify-center">
                     <span className="font-display font-bold text-sm">{pillar.number}</span>
                   </div>
@@ -248,7 +249,7 @@ export default function Home() {
                 <div className="mt-8 hairline opacity-25"></div>
                 <Link
                   to="/practice-areas"
-                  className="mt-8 inline-flex items-center gap-2 font-display text-[0.7rem] tracking-[0.22em] uppercase font-semibold text-gold-400 link-reveal"
+                  className="mt-8 inline-flex items-center gap-2 font-display text-[0.7rem] tracking-[0.22em] uppercase font-semibold text-accent-400 link-reveal"
                 >
                   Explore pillar <ArrowRight size={12} weight="bold" />
                 </Link>
@@ -326,7 +327,7 @@ export default function Home() {
               <SectionReveal delay={120}>
                 <span className="index-label">04 · The Founder</span>
                 <h2 className="mt-5 font-display font-black text-5xl md:text-6xl text-navy-900 display-tight">
-                  A lawyer who speaks the language of finance <span className="italic font-semibold text-gold-500">and</span> real estate.
+                  A lawyer who speaks the language of finance <span className="italic font-semibold text-accent-500">and</span> real estate.
                 </h2>
                 <p className="mt-8 font-serif text-ink-500 text-lg leading-[1.65]">
                   {attorneys[0].bio[0]}
@@ -363,9 +364,9 @@ export default function Home() {
           <div className="grid grid-cols-12 gap-4 mb-16 md:mb-20">
             <div className="col-span-12 md:col-span-5">
               <SectionReveal>
-                <span className="index-label text-gold-400">05 · The Advantage</span>
+                <span className="index-label text-accent-400">05 · The Advantage</span>
                 <h2 className="mt-5 font-display font-black text-5xl md:text-7xl display-tight">
-                  The client experience <span className="italic font-semibold text-gold-400">system.</span>
+                  The client experience <span className="italic font-semibold text-accent-400">system.</span>
                 </h2>
               </SectionReveal>
             </div>
@@ -386,7 +387,7 @@ export default function Home() {
                 className={`p-7 md:p-8 border-b md:border-b-0 border-white/15 ${idx < 4 ? 'lg:border-r' : ''} ${idx % 2 === 0 ? 'md:border-r lg:border-r' : ''} group hover:bg-white/5 transition-colors`}
               >
                 <div className="flex items-center justify-between mb-7">
-                  <span className="font-display font-black text-gold-400 text-5xl display-tight">{item.letter}</span>
+                  <span className="font-display font-black text-accent-400 text-5xl display-tight">{item.letter}</span>
                   <span className="font-display text-white/30 text-[0.65rem] tracking-[0.3em] uppercase">0{idx + 1}</span>
                 </div>
                 <h3 className="font-display font-bold text-xl display-tight mb-3">
@@ -403,7 +404,7 @@ export default function Home() {
           <SectionReveal delay={200} className="mt-20 border-t border-white/15 pt-14">
             <div className="grid grid-cols-12 gap-8 items-start">
               <div className="col-span-12 md:col-span-4">
-                <span className="index-label text-gold-400">06 · Signature Asset</span>
+                <span className="index-label text-accent-400">06 · Signature Asset</span>
                 <h3 className="mt-5 font-display font-black text-3xl md:text-5xl display-tight">
                   The Due Diligence Database.
                 </h3>
@@ -429,7 +430,7 @@ export default function Home() {
               <SectionReveal key={s.label} delay={idx * 70}>
                 <div className="text-center md:text-left">
                   <p className="font-display font-black text-6xl md:text-7xl text-navy-900 display-tight">{s.value}</p>
-                  <div className="hairline-gold w-10 mt-4 mx-auto md:mx-0"></div>
+                  <div className="hairline-accent w-10 mt-4 mx-auto md:mx-0"></div>
                   <p className="mt-4 font-display text-[0.72rem] tracking-[0.22em] uppercase font-semibold text-ink-500">{s.label}</p>
                 </div>
               </SectionReveal>
@@ -468,7 +469,7 @@ export default function Home() {
                   delay={idx * 70}
                   className={`p-7 border-b md:border-b-0 border-steel-200 ${idx < 4 ? 'lg:border-r' : ''} ${idx % 2 === 0 ? 'md:border-r lg:border-r' : ''}`}
                 >
-                  <Icon size={28} weight="regular" className="text-gold-500 mb-5" />
+                  <Icon size={28} weight="regular" className="text-accent-500 mb-5" />
                   <h3 className="font-display font-bold text-lg text-navy-900 display-tight mb-2">{v.title}</h3>
                   <p className="font-body text-ink-500 text-[0.88rem] leading-relaxed">{v.body}</p>
                 </SectionReveal>
@@ -515,7 +516,7 @@ export default function Home() {
                     <ul className="mt-5 space-y-1.5">
                       {tier.clients.slice(0, 4).map((c) => (
                         <li key={c} className="font-body text-ink-600 text-[0.85rem] flex items-start gap-2">
-                          <span className="w-1 h-1 bg-gold-500 rounded-full mt-2 shrink-0"></span>
+                          <span className="w-1 h-1 bg-accent-500 rounded-full mt-2 shrink-0"></span>
                           {c}
                         </li>
                       ))}
@@ -546,8 +547,8 @@ export default function Home() {
             <div className="col-span-12 md:col-span-8 space-y-10">
               {testimonials.map((t, idx) => (
                 <SectionReveal key={idx} delay={idx * 80}>
-                  <div className="relative pl-10 border-l-2 border-gold-500">
-                    <Quotes size={32} className="text-gold-500 absolute -left-4 -top-2 bg-bone-50 px-1" weight="fill" />
+                  <div className="relative pl-10 border-l-2 border-accent-500">
+                    <Quotes size={32} className="text-accent-500 absolute -left-4 -top-2 bg-bone-50 px-1" weight="fill" />
                     <p className="font-serif text-ink-700 text-xl md:text-2xl leading-[1.5] italic text-balance">
                       {t.quote}
                     </p>
@@ -617,9 +618,9 @@ export default function Home() {
           <div className="grid grid-cols-12 gap-8 items-center">
             <div className="col-span-12 md:col-span-8">
               <SectionReveal>
-                <span className="index-label text-gold-400">Let's Build Value Together</span>
+                <span className="index-label text-accent-400">Let's Build Value Together</span>
                 <h2 className="mt-5 font-display font-black text-5xl md:text-7xl lg:text-8xl display-tight">
-                  Ready to protect, structure, and <span className="italic font-semibold text-gold-400">grow</span> your real estate interests?
+                  Ready to protect, structure, and <span className="italic font-semibold text-accent-400">grow</span> your real estate interests?
                 </h2>
                 <p className="mt-8 font-serif text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed">
                   Book your Strategic Consultation. A Partner will meet you within seven business days — and within 48 hours of engagement, your Matter Blueprint is on your desk.
@@ -631,7 +632,7 @@ export default function Home() {
                 <div className="flex flex-col gap-4">
                   <Link
                     to="/contact"
-                    className="group inline-flex items-center justify-between bg-white text-navy-900 px-8 py-6 font-display text-[0.74rem] tracking-[0.22em] uppercase font-bold hover:bg-gold-400 transition-colors"
+                    className="group inline-flex items-center justify-between bg-white text-navy-900 px-8 py-6 font-display text-[0.74rem] tracking-[0.22em] uppercase font-bold hover:bg-accent-400 transition-colors"
                   >
                     Strategic Consultation
                     <ArrowRight size={15} weight="bold" className="group-hover:translate-x-1 transition-transform" />

@@ -78,7 +78,7 @@ export default function InsightDetail() {
             <p className="font-serif text-2xl md:text-3xl text-navy-900 leading-[1.35] display-tight mb-10 text-balance">
               {insight.excerpt}
             </p>
-            <div className="hairline-gold w-20 mb-10"></div>
+            <div className="hairline-accent w-20 mb-10"></div>
             <div className="font-serif text-ink-700 text-lg leading-[1.8] space-y-6">
               <p>In Zimbabwe's property sector, the gap between good legal counsel and exceptional legal counsel is not a matter of degree — it is a matter of approach. Standard practice treats each matter as a discrete transaction. We treat each matter as an opportunity to deepen our clients' understanding of their assets.</p>
               <p>This article unpacks what that looks like in practice — the framework, the mindset, and the operational discipline that separates firms who merely execute from firms who genuinely add value.</p>
@@ -88,7 +88,7 @@ export default function InsightDetail() {
               <h3 className="font-display font-black text-3xl md:text-4xl text-navy-900 display-tight mt-10 mb-5">What this means for your next matter</h3>
               <p>When you instruct DBA, you receive more than a legal opinion. You receive a Matter Blueprint within 48 hours — a structured document setting out milestones, timeline, team composition, communication protocol, and fees. You know exactly what to expect.</p>
               <p>Every communication is acknowledged within four business hours with a specific revert time. Every written opinion includes a plain-English Executive Summary for Decision-Making. And every retainer client receives a structured quarterly Legal Health Check — covering regulatory changes, contract renewals, compliance gaps, and succession alignment.</p>
-              <div className="pull-quote relative my-12 pl-12 border-l-2 border-gold-500">
+              <div className="pull-quote relative my-12 pl-12 border-l-2 border-accent-500">
                 <p className="font-serif italic text-2xl md:text-3xl text-navy-900 display-tight leading-[1.3]">
                   Compliance is not an afterthought — it is a central pillar of successful property investment. A robust compliance framework drives sustainable growth, operational efficiency, and long-term reputational security.
                 </p>

@@ -50,7 +50,7 @@ export default function Contact() {
           </div>
           <span className="index-label">Let's Build Value Together</span>
           <h1 className="mt-4 font-display font-black text-5xl md:text-7xl lg:text-[7rem] text-navy-900 display-tight">
-            Book your strategic <span className="italic font-semibold text-gold-500">consultation.</span>
+            Book your strategic <span className="italic font-semibold text-accent-500">consultation.</span>
           </h1>
           <p className="mt-8 font-serif text-ink-500 text-lg md:text-xl max-w-3xl leading-relaxed">
             A partner will respond within 4 business hours with a specific next step. For urgent matters, WhatsApp reaches a partner directly.
@@ -66,7 +66,7 @@ export default function Contact() {
               href={`tel:${firm.phone}`}
               className="group p-6 bg-white border border-steel-200 hover:border-navy-700 transition-colors"
             >
-              <Phone size={22} className="text-navy-700 group-hover:text-gold-500 transition-colors" weight="regular" />
+              <Phone size={22} className="text-navy-700 group-hover:text-accent-500 transition-colors" weight="regular" />
               <p className="mt-4 index-label text-ink-400">Telephone</p>
               <p className="mt-1 font-display font-bold text-navy-900 text-base">{firm.phoneDisplay}</p>
             </a>
@@ -74,7 +74,7 @@ export default function Contact() {
               href={`mailto:${firm.email}`}
               className="group p-6 bg-white border border-steel-200 hover:border-navy-700 transition-colors"
             >
-              <Envelope size={22} className="text-navy-700 group-hover:text-gold-500 transition-colors" weight="regular" />
+              <Envelope size={22} className="text-navy-700 group-hover:text-accent-500 transition-colors" weight="regular" />
               <p className="mt-4 index-label text-ink-400">Email</p>
               <p className="mt-1 font-display font-bold text-navy-900 text-base break-all">{firm.email}</p>
             </a>
@@ -126,7 +126,7 @@ export default function Contact() {
                     <button
                       onClick={() => setChannel('whatsapp')}
                       className={`px-5 py-2.5 font-display text-[0.68rem] tracking-[0.2em] uppercase font-semibold transition-colors ${
-                        channel === 'whatsapp' ? 'bg-gold-500 text-navy-900' : 'text-ink-500 hover:text-navy-900'
+                        channel === 'whatsapp' ? 'bg-accent-500 text-navy-900' : 'text-ink-500 hover:text-navy-900'
                       }`}
                     >
                       <WhatsappLogo size={14} weight="regular" className="inline mr-2" />WhatsApp
@@ -204,7 +204,7 @@ export default function Contact() {
                       <button
                         type="submit"
                         className={`w-full inline-flex items-center justify-center gap-2 px-8 py-5 font-display text-[0.74rem] tracking-[0.22em] uppercase font-bold transition-colors ${
-                          channel === 'whatsapp' ? 'bg-gold-500 text-navy-900 hover:bg-gold-400' : 'bg-navy-700 text-white hover:bg-navy-900'
+                          channel === 'whatsapp' ? 'bg-accent-500 text-navy-900 hover:bg-accent-400' : 'bg-navy-700 text-white hover:bg-navy-900'
                         }`}
                       >
                         Send via {channel === 'whatsapp' ? 'WhatsApp' : 'Email'}
@@ -223,36 +223,36 @@ export default function Contact() {
             <div className="col-span-12 lg:col-span-5 space-y-6">
               <SectionReveal delay={120}>
                 <div className="bg-navy-900 text-white p-8">
-                  <span className="index-label text-gold-400">Contact</span>
+                  <span className="index-label text-accent-400">Contact</span>
                   <h3 className="mt-4 font-display font-black text-3xl display-tight">Directly.</h3>
                   <ul className="mt-8 space-y-6">
                     <li className="flex items-start gap-4">
-                      <MapPin size={20} className="text-gold-400 mt-1 shrink-0" weight="regular" />
+                      <MapPin size={20} className="text-accent-400 mt-1 shrink-0" weight="regular" />
                       <div>
                         <p className="font-display text-[0.68rem] tracking-[0.22em] uppercase text-white/60">Chambers</p>
                         <p className="mt-1 font-serif text-white text-[0.95rem] leading-relaxed">{firm.address}</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-4">
-                      <Phone size={20} className="text-gold-400 mt-1 shrink-0" weight="regular" />
+                      <Phone size={20} className="text-accent-400 mt-1 shrink-0" weight="regular" />
                       <div>
                         <p className="font-display text-[0.68rem] tracking-[0.22em] uppercase text-white/60">Telephone</p>
-                        <a href={`tel:${firm.phone}`} className="mt-1 block font-serif text-white text-[0.95rem] hover:text-gold-400">
+                        <a href={`tel:${firm.phone}`} className="mt-1 block font-serif text-white text-[0.95rem] hover:text-accent-400">
                           {firm.phoneDisplay}
                         </a>
                       </div>
                     </li>
                     <li className="flex items-start gap-4">
-                      <Envelope size={20} className="text-gold-400 mt-1 shrink-0" weight="regular" />
+                      <Envelope size={20} className="text-accent-400 mt-1 shrink-0" weight="regular" />
                       <div>
                         <p className="font-display text-[0.68rem] tracking-[0.22em] uppercase text-white/60">Email</p>
-                        <a href={`mailto:${firm.email}`} className="mt-1 block font-serif text-white text-[0.95rem] hover:text-gold-400 break-all">
+                        <a href={`mailto:${firm.email}`} className="mt-1 block font-serif text-white text-[0.95rem] hover:text-accent-400 break-all">
                           {firm.email}
                         </a>
                       </div>
                     </li>
                     <li className="flex items-start gap-4">
-                      <Clock size={20} className="text-gold-400 mt-1 shrink-0" weight="regular" />
+                      <Clock size={20} className="text-accent-400 mt-1 shrink-0" weight="regular" />
                       <div>
                         <p className="font-display text-[0.68rem] tracking-[0.22em] uppercase text-white/60">Hours</p>
                         <p className="mt-1 font-serif text-white text-[0.95rem]">{firm.hours}</p>
@@ -260,13 +260,13 @@ export default function Contact() {
                     </li>
                   </ul>
                   <div className="mt-8 pt-6 border-t border-white/15 flex items-center gap-3">
-                    <a href={firm.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="h-11 w-11 border border-white/30 flex items-center justify-center hover:bg-gold-500 hover:border-gold-500 hover:text-navy-900 transition-colors">
+                    <a href={firm.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="h-11 w-11 border border-white/30 flex items-center justify-center hover:bg-accent-500 hover:border-accent-500 hover:text-navy-900 transition-colors">
                       <LinkedinLogo size={16} weight="regular" />
                     </a>
-                    <a href={firm.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-11 w-11 border border-white/30 flex items-center justify-center hover:bg-gold-500 hover:border-gold-500 hover:text-navy-900 transition-colors">
+                    <a href={firm.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-11 w-11 border border-white/30 flex items-center justify-center hover:bg-accent-500 hover:border-accent-500 hover:text-navy-900 transition-colors">
                       <FacebookLogo size={16} weight="regular" />
                     </a>
-                    <a href={`https://wa.me/${firm.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="ml-auto inline-flex items-center gap-2 bg-gold-500 text-navy-900 px-5 py-3 font-display text-[0.68rem] tracking-[0.22em] uppercase font-bold hover:bg-gold-400 transition-colors">
+                    <a href={`https://wa.me/${firm.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="ml-auto inline-flex items-center gap-2 bg-accent-500 text-navy-900 px-5 py-3 font-display text-[0.68rem] tracking-[0.22em] uppercase font-bold hover:bg-accent-400 transition-colors">
                       <WhatsappLogo size={14} weight="regular" />WhatsApp
                     </a>
                   </div>

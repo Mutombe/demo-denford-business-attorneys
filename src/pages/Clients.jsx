@@ -22,7 +22,7 @@ export default function Clients() {
           </div>
           <span className="index-label">Who We Serve</span>
           <h1 className="mt-4 font-display font-black text-5xl md:text-7xl lg:text-[7rem] text-navy-900 display-tight">
-            First-time buyers to <span className="italic font-semibold text-gold-500">foreign investors.</span>
+            First-time buyers to <span className="italic font-semibold text-accent-500">foreign investors.</span>
           </h1>
           <p className="mt-8 font-serif text-ink-500 text-lg md:text-xl max-w-3xl leading-relaxed">
             A three-tier client model ensures that no matter the scale, every matter receives partner oversight and the same standard of care.
@@ -60,7 +60,7 @@ export default function Clients() {
                     <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-0 border-t border-steel-300">
                       {tier.clients.map((c) => (
                         <li key={c} className="py-3 border-b border-steel-200 flex items-center gap-3">
-                          <span className="w-1.5 h-1.5 bg-gold-500 rounded-full shrink-0"></span>
+                          <span className="w-1.5 h-1.5 bg-accent-500 rounded-full shrink-0"></span>
                           <span className="font-display font-semibold text-navy-900 text-[0.88rem] tracking-wide">{c}</span>
                         </li>
                       ))}
@@ -103,7 +103,7 @@ export default function Clients() {
         <div className="max-w-[1480px] mx-auto px-5 md:px-10">
           <div className="max-w-3xl mb-14">
             <SectionReveal>
-              <span className="index-label text-gold-400">Client Voice</span>
+              <span className="index-label text-accent-400">Client Voice</span>
               <h2 className="mt-4 font-display font-black text-4xl md:text-6xl display-tight">
                 What our clients say.
               </h2>
@@ -117,7 +117,7 @@ export default function Clients() {
                 delay={idx * 100}
                 className={`p-8 md:p-10 border-b md:border-b-0 border-white/15 ${idx < 2 ? 'md:border-r' : ''}`}
               >
-                <div className="text-6xl font-serif text-gold-400 leading-none mb-4">"</div>
+                <div className="text-6xl font-serif text-accent-400 leading-none mb-4">"</div>
                 <p className="font-serif text-white/90 text-lg leading-[1.6] italic">
                   {t.quote}
                 </p>

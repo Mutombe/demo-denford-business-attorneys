@@ -20,7 +20,7 @@ export default function InsightCard({ insight, variant = 'default' }) {
             />
           </div>
           <div>
-            <span className="index-label text-gold-500">{insight.category}</span>
+            <span className="index-label text-accent-500">{insight.category}</span>
             <h3 className="mt-3 font-display font-black text-3xl md:text-4xl text-navy-900 display-tight group-hover:text-navy-700 transition-colors">
               {insight.title}
             </h3>
@@ -41,10 +41,10 @@ export default function InsightCard({ insight, variant = 'default' }) {
   return (
     <Link
       to={`/insights/${insight.slug}`}
-      className="block group border-t border-steel-300 pt-6 hover:border-gold-500 transition-colors"
+      className="block group border-t border-steel-300 pt-6 hover:border-accent-500 transition-colors"
     >
       <div className="flex items-start justify-between gap-4 mb-4">
-        <span className="index-label text-gold-500">{insight.category}</span>
+        <span className="index-label text-accent-500">{insight.category}</span>
         <span className="font-body text-[0.72rem] text-ink-400">{insight.dateDisplay}</span>
       </div>
       <h3 className="font-display font-bold text-xl md:text-2xl text-navy-900 display-tight group-hover:text-navy-700 transition-colors">

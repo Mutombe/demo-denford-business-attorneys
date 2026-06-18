@@ -47,7 +47,7 @@ export default function AttorneyCard({ attorney, featured = false }) {
             {attorney.short}
           </p>
           <div className="mt-4 flex items-center gap-4">
-            <span className="inline-flex items-center gap-2 font-display text-[0.7rem] tracking-[0.22em] uppercase font-semibold text-navy-700 group-hover:text-gold-500 transition-colors">
+            <span className="inline-flex items-center gap-2 font-display text-[0.7rem] tracking-[0.22em] uppercase font-semibold text-navy-700 group-hover:text-accent-500 transition-colors">
               <span>Profile</span>
               <ArrowRight size={12} weight="bold" className="group-hover:translate-x-1 transition-transform" />
             </span>

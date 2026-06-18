@@ -119,33 +119,34 @@
 
 @theme {
   /* =====================================================
-     DBA BRAND PALETTE
-     Navy from logo (#183757) + Steel Gray (#8a96a1)
-     Accent: Muted warm gold for dignified editorial energy
+     DBA BRAND PALETTE — official primary + secondary
+     Navy   #072f48 / near-black #0a212e (logo + brandsheet)
+     Steel  #919191 (light) · #474749 (dark)  — secondary greys
+     Accent #00649c (brand blue) — the single highlight hue
      ===================================================== */
-  --color-navy-50:  #F1F4F8;
-  --color-navy-100: #DCE3EC;
-  --color-navy-200: #B5C2D4;
-  --color-navy-300: #8095B0;
-  --color-navy-400: #4F6B8C;
-  --color-navy-500: #2B4A6E;
-  --color-navy-600: #1F3D5E;
-  --color-navy-700: #183757;
-  --color-navy-800: #112848;
-  --color-navy-900: #0B1B33;
-  --color-navy-950: #060E1E;
+  --color-navy-50:  #EEF3F7;
+  --color-navy-100: #D3E0EA;
+  --color-navy-200: #A6C1D4;
+  --color-navy-300: #6E95B2;
+  --color-navy-400: #3A6A8E;
+  --color-navy-500: #134E74;
+  --color-navy-600: #0A3C5C;
+  --color-navy-700: #072F48;
+  --color-navy-800: #08283B;
+  --color-navy-900: #0A212E;
+  --color-navy-950: #06141D;
 
-  /* Steel — secondary neutral from logo */
-  --color-steel-50:  #F5F6F8;
-  --color-steel-100: #E6E9ED;
-  --color-steel-200: #CED3D9;
-  --color-steel-300: #ADB5BE;
-  --color-steel-400: #8A96A1;
-  --color-steel-500: #6D7A86;
-  --color-steel-600: #56626D;
-  --color-steel-700: #434C55;
-  --color-steel-800: #2E353C;
-  --color-steel-900: #1A1F24;
+  /* Steel — secondary neutral greys from brand palette */
+  --color-steel-50:  #F5F5F5;
+  --color-steel-100: #E9E9EA;
+  --color-steel-200: #D6D6D7;
+  --color-steel-300: #B8B8B9;
+  --color-steel-400: #919191;
+  --color-steel-500: #6F7072;
+  --color-steel-600: #58585A;
+  --color-steel-700: #474749;
+  --color-steel-800: #2F2F31;
+  --color-steel-900: #1A1A1B;
 
   /* Bone — editorial off-white background */
   --color-bone-50:  #FBFAF7;
@@ -153,10 +154,10 @@
   --color-bone-200: #EBE5D7;
   --color-bone-300: #D8CFB8;
 
-  /* Gold — restrained editorial accent (used sparingly) */
-  --color-gold-400: #C9A961;
-  --color-gold-500: #B48F3F;
-  --color-gold-600: #9A762D;
+  /* Accent — brand blue #00649c (replaces former gold accent) */
+  --color-accent-400: #2A8CC7;
+  --color-accent-500: #00649C;
+  --color-accent-600: #00517F;
 
   /* Ink — deep near-black for type */
   --color-ink-50:  #F7F7F7;
@@ -170,9 +171,9 @@
   --color-ink-800: #0F0F0F;
   --color-ink-900: #060606;
 
-  /* Typography */
+  /* Typography — single sans system (serif retired per brand direction) */
   --font-display: 'Poligon', system-ui, sans-serif;
-  --font-serif:   'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-serif:   'Poligon', system-ui, sans-serif;
   --font-body:    'Inter', system-ui, sans-serif;
 }
 
@@ -241,9 +242,9 @@ body {
   background: linear-gradient(90deg, transparent 0%, var(--color-steel-300) 20%, var(--color-steel-300) 80%, transparent 100%);
 }
 
-.hairline-gold {
+.hairline-accent {
   height: 1px;
-  background: var(--color-gold-500);
+  background: var(--color-accent-500);
 }
 
 /* Index label: numbered editorial prefix */
@@ -253,7 +254,7 @@ body {
   font-size: 0.75rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--color-gold-500);
+  color: var(--color-accent-500);
 }
 
 /* Elegant link underline animation */
@@ -283,7 +284,7 @@ body {
   font-family: var(--font-serif);
   font-size: 6rem;
   line-height: 0;
-  color: var(--color-gold-500);
+  color: var(--color-accent-500);
   position: absolute;
   left: -2rem;
   top: 3rem;
@@ -305,7 +306,7 @@ body {
 .animate-float { animation: float-subtle 6s ease-in-out infinite; }
 
 :focus-visible {
-  outline: 2px solid var(--color-gold-500);
+  outline: 2px solid var(--color-accent-500);
   outline-offset: 3px;
 }
 
@@ -316,7 +317,7 @@ body {
 
 /* Mobile type sizing so hero doesn't overflow */
 @media (max-width: 640px) {
-  .hero-display { font-size: clamp(2.5rem, 11vw, 4.25rem) !important; }
+  .hero-display { font-size: clamp(1.9rem, 8.4vw, 3.25rem) !important; }
 }
 
 /* Prevent iOS input zoom — input font-size must be >= 16px */

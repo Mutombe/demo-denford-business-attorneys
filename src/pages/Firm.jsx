@@ -34,9 +34,9 @@ export default function Firm() {
             <span>/</span>
             <span className="text-white">The Firm</span>
           </div>
-          <span className="index-label text-gold-400">About DBA</span>
+          <span className="index-label text-accent-400">About DBA</span>
           <h1 className="mt-5 font-display font-black text-5xl md:text-7xl lg:text-[7.5rem] display-tight">
-            A boutique firm, <span className="italic font-semibold text-gold-400">built</span> for real estate.
+            A boutique firm, <span className="italic font-semibold text-accent-400">built</span> for real estate.
           </h1>
           <p className="mt-8 font-serif text-white/85 text-xl md:text-2xl max-w-3xl leading-[1.5]">
             Harare-based. Partner-led. Technology-enabled. A deliberately lean practice designed to deliver the depth of a larger firm without sacrificing personal attention.
@@ -79,15 +79,15 @@ export default function Firm() {
         <div className="max-w-[1480px] mx-auto px-5 md:px-10 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-b border-white/15">
             <SectionReveal className="p-10 md:p-14 border-b md:border-b-0 md:border-r border-white/15">
-              <span className="index-label text-gold-400">02 · Vision</span>
+              <span className="index-label text-accent-400">02 · Vision</span>
               <p className="mt-6 font-serif text-2xl md:text-4xl leading-[1.3] display-tight text-balance">
-                To be the legal practice of choice for <span className="italic text-gold-400">Real Estate</span> — delivering meticulously crafted, bespoke solutions with exceptional personal attention and discretion.
+                To be the legal practice of choice for <span className="italic text-accent-400">Real Estate</span> — delivering meticulously crafted, bespoke solutions with exceptional personal attention and discretion.
               </p>
             </SectionReveal>
             <SectionReveal delay={120} className="p-10 md:p-14">
-              <span className="index-label text-gold-400">03 · Mission</span>
+              <span className="index-label text-accent-400">03 · Mission</span>
               <p className="mt-6 font-serif text-2xl md:text-4xl leading-[1.3] display-tight text-balance">
-                To provide <span className="italic text-gold-400">commercially viable, value-centric</span> legal solutions that optimise operations and fuel growth. We translate legal complexity into business advantage.
+                To provide <span className="italic text-accent-400">commercially viable, value-centric</span> legal solutions that optimise operations and fuel growth. We translate legal complexity into business advantage.
               </p>
             </SectionReveal>
           </div>
@@ -123,7 +123,7 @@ export default function Firm() {
                   delay={idx * 70}
                   className={`p-7 border-b md:border-b-0 border-steel-200 ${idx < 4 ? 'lg:border-r' : ''} ${idx % 2 === 0 ? 'md:border-r lg:border-r' : ''}`}
                 >
-                  <Icon size={28} weight="regular" className="text-gold-500 mb-5" />
+                  <Icon size={28} weight="regular" className="text-accent-500 mb-5" />
                   <h3 className="font-display font-bold text-lg text-navy-900 display-tight mb-2">{v.title}</h3>
                   <p className="font-body text-ink-500 text-[0.88rem] leading-relaxed">{v.body}</p>
                 </SectionReveal>
@@ -159,7 +159,7 @@ export default function Firm() {
                 delay={idx * 80}
                 className={`p-8 md:p-10 border-b border-steel-200 ${idx % 2 === 0 ? 'md:border-r' : ''}`}
               >
-                <span className="font-display font-light text-gold-500 text-[0.7rem] tracking-[0.22em]">0{idx + 1}</span>
+                <span className="font-display font-light text-accent-500 text-[0.7rem] tracking-[0.22em]">0{idx + 1}</span>
                 <h3 className="mt-3 font-display font-bold text-2xl md:text-3xl text-navy-900 display-tight">{item.title}</h3>
                 <p className="mt-4 font-serif text-ink-500 leading-[1.65]">{item.body}</p>
               </SectionReveal>
@@ -172,14 +172,14 @@ export default function Firm() {
       <section className="relative py-20 md:py-24 bg-navy-950 text-white">
         <div className="max-w-[1480px] mx-auto px-5 md:px-10">
           <div className="text-center mb-12">
-            <span className="index-label text-gold-400">06 · Regulatory & Professional Affiliations</span>
+            <span className="index-label text-accent-400">06 · Regulatory & Professional Affiliations</span>
             <h2 className="mt-4 font-display font-black text-3xl md:text-4xl display-tight">
               Credentials you can verify.
             </h2>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 max-w-5xl mx-auto">
             {memberships.map((m) => (
-              <span key={m} className="font-display text-[0.82rem] md:text-[0.95rem] tracking-[0.08em] uppercase text-white/80 font-medium border-b border-gold-500/30 pb-1.5">
+              <span key={m} className="font-display text-[0.82rem] md:text-[0.95rem] tracking-[0.08em] uppercase text-white/80 font-medium border-b border-accent-500/30 pb-1.5">
                 {m}
               </span>
             ))}

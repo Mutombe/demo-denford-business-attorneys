@@ -16,13 +16,13 @@ export default function PracticeAreaCard({ area, variant = 'default' }) {
 
   if (variant === 'minimal') {
     return (
-      <div className="relative block group border-t border-steel-300 py-8 md:py-10 transition-colors hover:border-gold-500">
+      <div className="relative block group border-t border-steel-300 py-8 md:py-10 transition-colors hover:border-accent-500">
         <div className="grid grid-cols-12 gap-4 items-start">
           <div className="col-span-2 md:col-span-1">
             <span className="font-display font-light text-steel-400 text-[0.72rem] tracking-[0.2em]">{area.number}</span>
           </div>
           <Link to={`/practice-areas/${area.slug}`} className="col-span-10 md:col-span-7 block">
-            <span className="index-label text-gold-500">{area.pillar}</span>
+            <span className="index-label text-accent-500">{area.pillar}</span>
             <h3 className="mt-2 font-display font-bold text-2xl md:text-3xl text-navy-900 group-hover:text-navy-700 transition-colors display-tight">
               {area.name}
             </h3>
@@ -77,7 +77,7 @@ export default function PracticeAreaCard({ area, variant = 'default' }) {
           </span>
         </div>
         <div className="p-6 md:p-7 pb-5 md:pb-6">
-          <span className="index-label text-gold-500">{area.pillar}</span>
+          <span className="index-label text-accent-500">{area.pillar}</span>
           <h3 className="mt-2 font-display font-bold text-xl md:text-2xl text-navy-900 display-tight leading-tight">
             {area.name}
           </h3>
@@ -90,7 +90,7 @@ export default function PracticeAreaCard({ area, variant = 'default' }) {
       <div className="px-6 md:px-7 pb-6 md:pb-7 flex items-center justify-between gap-3">
         <Link
           to={`/practice-areas/${area.slug}`}
-          className="inline-flex items-center gap-2 font-display text-[0.72rem] tracking-[0.22em] uppercase font-semibold text-navy-700 group-hover:text-gold-500 transition-colors"
+          className="inline-flex items-center gap-2 font-display text-[0.72rem] tracking-[0.22em] uppercase font-semibold text-navy-700 group-hover:text-accent-500 transition-colors"
         >
           <span>Explore Practice</span>
           <ArrowRight size={14} weight="bold" className="group-hover:translate-x-1 transition-transform" />

@@ -60,9 +60,9 @@ export default function PracticeAreaDetail() {
           <div className="grid grid-cols-12 gap-8 items-end">
             <div className="col-span-12 md:col-span-9">
               <div className="flex items-center gap-4 mb-6">
-                <span className="font-display font-light text-gold-400 text-[0.72rem] tracking-[0.3em]">{area.number}</span>
-                <div className="w-16 h-px bg-gold-500"></div>
-                <span className="font-display text-gold-400 text-[0.72rem] tracking-[0.3em] uppercase">{area.pillar}</span>
+                <span className="font-display font-light text-accent-400 text-[0.72rem] tracking-[0.3em]">{area.number}</span>
+                <div className="w-16 h-px bg-accent-500"></div>
+                <span className="font-display text-accent-400 text-[0.72rem] tracking-[0.3em] uppercase">{area.pillar}</span>
               </div>
               <h1 className="font-display font-black text-5xl md:text-7xl lg:text-[6.5rem] display-tight">
                 {area.name}
@@ -92,7 +92,7 @@ export default function PracticeAreaDetail() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-steel-300">
                   {area.services.map((svc, i) => (
                     <div key={i} className={`py-5 border-b border-steel-200 ${i % 2 === 0 ? 'md:border-r md:pr-8' : 'md:pl-8'} flex items-start gap-4`}>
-                      <span className="font-display font-light text-gold-500 text-[0.7rem] tracking-[0.2em] mt-1">{String(i + 1).padStart(2, '0')}</span>
+                      <span className="font-display font-light text-accent-500 text-[0.7rem] tracking-[0.2em] mt-1">{String(i + 1).padStart(2, '0')}</span>
                       <span className="font-body text-ink-700 text-[0.95rem] leading-relaxed flex-1">{svc}</span>
                     </div>
                   ))}
@@ -106,7 +106,7 @@ export default function PracticeAreaDetail() {
                 {/* Lead attorney */}
                 <SectionReveal delay={150}>
                   <div className="bg-navy-900 text-white p-7">
-                    <span className="index-label text-gold-400">Lead Attorney</span>
+                    <span className="index-label text-accent-400">Lead Attorney</span>
                     <div className="mt-5 flex items-center gap-4">
                       <img
                         src={attorneys[0].portrait}
@@ -124,7 +124,7 @@ export default function PracticeAreaDetail() {
                     <p className="mt-5 font-body text-white/70 text-[0.88rem] leading-relaxed line-clamp-3">
                       {attorneys[0].short}
                     </p>
-                    <Link to={`/attorneys/${attorneys[0].slug}`} className="mt-5 inline-flex items-center gap-2 font-display text-[0.7rem] tracking-[0.22em] uppercase font-semibold text-gold-400 link-reveal">
+                    <Link to={`/attorneys/${attorneys[0].slug}`} className="mt-5 inline-flex items-center gap-2 font-display text-[0.7rem] tracking-[0.22em] uppercase font-semibold text-accent-400 link-reveal">
                       Full profile <ArrowRight size={12} weight="bold" />
                     </Link>
                   </div>
@@ -164,8 +164,8 @@ export default function PracticeAreaDetail() {
                       <ul className="mt-5 space-y-4">
                         {related.map((r) => (
                           <li key={r.slug}>
-                            <Link to={`/practice-areas/${r.slug}`} className="group block border-b border-steel-200 pb-4 hover:border-gold-500 transition-colors">
-                              <span className="font-display font-light text-gold-500 text-[0.68rem] tracking-[0.22em]">{r.number}</span>
+                            <Link to={`/practice-areas/${r.slug}`} className="group block border-b border-steel-200 pb-4 hover:border-accent-500 transition-colors">
+                              <span className="font-display font-light text-accent-500 text-[0.68rem] tracking-[0.22em]">{r.number}</span>
                               <p className="mt-1 font-display font-bold text-navy-900 text-[0.95rem] group-hover:text-navy-700 transition-colors">
                                 {r.name}
                               </p>
@@ -198,7 +198,7 @@ export default function PracticeAreaDetail() {
               { label: 'Representation', value: 'Commercial lease restructuring for an anchor tenant', amount: '10-year term' },
             ].map((m, i) => (
               <div key={i} className={`p-7 border-b md:border-b-0 border-steel-200 ${i < 2 ? 'md:border-r' : ''}`}>
-                <span className="font-display text-gold-500 text-[0.68rem] tracking-[0.22em] uppercase">{m.label}</span>
+                <span className="font-display text-accent-500 text-[0.68rem] tracking-[0.22em] uppercase">{m.label}</span>
                 <p className="mt-3 font-display font-bold text-lg text-navy-900 display-tight">{m.value}</p>
                 <p className="mt-2 font-serif italic text-ink-500 text-sm">{m.amount}</p>
               </div>
@@ -216,7 +216,7 @@ export default function PracticeAreaDetail() {
                 <span className="font-display text-[0.7rem] tracking-[0.22em] uppercase text-ink-500 flex items-center gap-2">
                   <ArrowLeft size={13} weight="bold" /> Previous
                 </span>
-                <p className="mt-2 font-display font-bold text-xl text-navy-900 display-tight group-hover:text-gold-500 transition-colors">{prev.name}</p>
+                <p className="mt-2 font-display font-bold text-xl text-navy-900 display-tight group-hover:text-accent-500 transition-colors">{prev.name}</p>
               </Link>
             ) : <div />}
             {next ? (
@@ -224,7 +224,7 @@ export default function PracticeAreaDetail() {
                 <span className="font-display text-[0.7rem] tracking-[0.22em] uppercase text-ink-500 flex items-center md:justify-end gap-2">
                   Next <ArrowRight size={13} weight="bold" />
                 </span>
-                <p className="mt-2 font-display font-bold text-xl text-navy-900 display-tight group-hover:text-gold-500 transition-colors">{next.name}</p>
+                <p className="mt-2 font-display font-bold text-xl text-navy-900 display-tight group-hover:text-accent-500 transition-colors">{next.name}</p>
               </Link>
             ) : <div />}
           </div>

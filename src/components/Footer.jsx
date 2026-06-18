@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="border-b border-white/10">
         <div className="max-w-[1480px] mx-auto px-5 md:px-10 py-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <p className="index-label text-gold-400">Regulatory Affiliations</p>
+            <p className="index-label text-accent-400">Regulatory Affiliations</p>
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               {memberships.map((m) => (
                 <span key={m} className="font-display text-[0.72rem] tracking-[0.12em] uppercase text-bone-100/70 font-medium">
@@ -46,17 +46,22 @@ export default function Footer() {
                 <span className="font-display font-black text-sm tracking-[0.08em]">ATTORNEYS</span>
               </div>
             </Link>
-            <p className="font-serif italic text-gold-400 text-lg mb-5">{firm.tagline}</p>
+            <p className="font-display font-semibold text-bone-100 text-xl tracking-[0.01em] mb-2">
+              Full Service Real Estate Law
+            </p>
+            <p className="font-display text-bone-100/70 text-[0.78rem] tracking-[0.22em] uppercase mb-5">
+              Solutions <span className="text-steel-400">•</span> Value <span className="text-steel-400">•</span> Growth
+            </p>
             <p className="font-body text-bone-100/70 text-sm leading-relaxed max-w-sm">
               A Harare-based boutique firm built exclusively around real estate and commercial law — translating complex legal issues into tangible business advantage.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a href={firm.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-                 className="h-10 w-10 border border-white/20 flex items-center justify-center hover:bg-gold-500 hover:border-gold-500 transition-colors">
+                 className="h-10 w-10 border border-white/20 flex items-center justify-center hover:bg-accent-500 hover:border-accent-500 transition-colors">
                 <LinkedinLogo size={16} weight="regular" />
               </a>
               <a href={firm.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook"
-                 className="h-10 w-10 border border-white/20 flex items-center justify-center hover:bg-gold-500 hover:border-gold-500 transition-colors">
+                 className="h-10 w-10 border border-white/20 flex items-center justify-center hover:bg-accent-500 hover:border-accent-500 transition-colors">
                 <FacebookLogo size={16} weight="regular" />
               </a>
             </div>
@@ -64,7 +69,7 @@ export default function Footer() {
 
           {/* Practice */}
           <div className="md:col-span-3">
-            <p className="index-label text-gold-400 mb-6">Practice Areas</p>
+            <p className="index-label text-accent-400 mb-6">Practice Areas</p>
             <ul className="space-y-3">
               {topPractices.map((p) => (
                 <li key={p.slug}>
@@ -77,7 +82,7 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link to="/practice-areas" className="font-display text-[0.85rem] text-gold-400 link-reveal tracking-wide">
+                <Link to="/practice-areas" className="font-display text-[0.85rem] text-accent-400 link-reveal tracking-wide">
                   View all practices →
                 </Link>
               </li>
@@ -86,7 +91,7 @@ export default function Footer() {
 
           {/* Navigate */}
           <div className="md:col-span-2">
-            <p className="index-label text-gold-400 mb-6">Navigate</p>
+            <p className="index-label text-accent-400 mb-6">Navigate</p>
             <ul className="space-y-3">
               <li><Link to="/firm" className="font-display text-[0.85rem] text-bone-100/80 hover:text-white tracking-wide">The Firm</Link></li>
               <li><Link to="/attorneys" className="font-display text-[0.85rem] text-bone-100/80 hover:text-white tracking-wide">Attorneys</Link></li>
@@ -98,20 +103,20 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="md:col-span-3">
-            <p className="index-label text-gold-400 mb-6">Contact</p>
+            <p className="index-label text-accent-400 mb-6">Contact</p>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin size={16} className="text-gold-400 mt-1 shrink-0" weight="regular" />
+                <MapPin size={16} className="text-accent-400 mt-1 shrink-0" weight="regular" />
                 <span className="font-body text-[0.85rem] text-bone-100/80 leading-relaxed">{firm.address}</span>
               </li>
               <li className="flex items-start gap-3">
-                <Phone size={16} className="text-gold-400 mt-1 shrink-0" weight="regular" />
+                <Phone size={16} className="text-accent-400 mt-1 shrink-0" weight="regular" />
                 <a href={`tel:${firm.phone}`} className="font-body text-[0.85rem] text-bone-100/80 hover:text-white">
                   {firm.phoneDisplay}
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Envelope size={16} className="text-gold-400 mt-1 shrink-0" weight="regular" />
+                <Envelope size={16} className="text-accent-400 mt-1 shrink-0" weight="regular" />
                 <a href={`mailto:${firm.email}`} className="font-body text-[0.85rem] text-bone-100/80 hover:text-white break-all">
                   {firm.email}
                 </a>
@@ -144,7 +149,7 @@ export default function Footer() {
             href="https://www.bitstudio.co.zw"
             target="_blank"
             rel="noopener noreferrer"
-            className="link-reveal hover:text-gold-400 transition-colors"
+            className="link-reveal hover:text-accent-400 transition-colors"
           >
             Crafted by Bit Studio
           </a>

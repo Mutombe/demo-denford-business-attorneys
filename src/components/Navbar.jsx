@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { List, X, ArrowRight, MagnifyingGlass, WhatsappLogo } from '@phosphor-icons/react';
+import { List, X, ArrowRight, MagnifyingGlass, WhatsappLogo, DownloadSimple } from '@phosphor-icons/react';
 import { firm } from '../data/siteData';
 
 const WA_MSG = "Hi DBA, I'd like to discuss a matter with one of your attorneys.";
+const PROFILE_PDF = '/DBA-Firm-Profile.pdf';
 
 const NAV_LINKS = [
   { to: '/', label: 'Home' },
@@ -63,8 +64,8 @@ export default function Navbar({ onOpenSearch }) {
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
               <div className={`flex flex-col leading-none ${overlayMode ? 'text-white' : 'text-navy-900'}`}>
-                <span className="font-display font-black text-[0.72rem] sm:text-[0.82rem] md:text-[0.95rem] tracking-[0.06em] md:tracking-[0.08em] whitespace-nowrap">DENFORD BUSINESS</span>
-                <span className="font-display font-black text-[0.72rem] sm:text-[0.82rem] md:text-[0.95rem] tracking-[0.06em] md:tracking-[0.08em] whitespace-nowrap">ATTORNEYS</span>
+                <span className="font-display font-medium text-[0.72rem] sm:text-[0.82rem] md:text-[0.95rem] tracking-[0.1em] whitespace-nowrap">DENFORD BUSINESS</span>
+                <span className="font-display font-medium text-[0.72rem] sm:text-[0.82rem] md:text-[0.95rem] tracking-[0.1em] whitespace-nowrap">ATTORNEYS</span>
               </div>
             </Link>
 
@@ -95,11 +96,25 @@ export default function Navbar({ onOpenSearch }) {
                 onClick={() => onOpenSearch && onOpenSearch()}
                 aria-label="Open search"
                 className={`p-2.5 transition-colors ${
-                  overlayMode ? 'text-white hover:text-gold-400' : 'text-navy-900 hover:text-gold-500'
+                  overlayMode ? 'text-white hover:text-accent-400' : 'text-navy-900 hover:text-accent-500'
                 }`}
               >
                 <MagnifyingGlass size={20} weight="regular" />
               </button>
+
+              {/* Firm profile download — desktop */}
+              <a
+                href={PROFILE_PDF}
+                download="Denford-Business-Attorneys-Firm-Profile.pdf"
+                aria-label="Download the firm profile (PDF)"
+                title="Download firm profile (PDF)"
+                className={`hidden md:inline-flex items-center gap-2 px-3 py-2.5 font-display text-[0.68rem] tracking-[0.22em] uppercase font-semibold transition-colors ${
+                  overlayMode ? 'text-white hover:text-accent-400' : 'text-navy-900 hover:text-accent-500'
+                }`}
+              >
+                <DownloadSimple size={15} weight="bold" />
+                Profile
+              </a>
 
               {/* WhatsApp pill — desktop */}
               <a
@@ -118,7 +133,7 @@ export default function Navbar({ onOpenSearch }) {
                 to="/contact"
                 className={`hidden md:inline-flex items-center gap-2 px-5 py-3 text-[0.7rem] tracking-[0.22em] uppercase font-display font-semibold transition-all duration-300 ${
                   overlayMode
-                    ? 'bg-white text-navy-900 hover:bg-gold-400 hover:text-navy-900'
+                    ? 'bg-white text-navy-900 hover:bg-accent-400 hover:text-navy-900'
                     : 'bg-navy-700 text-white hover:bg-navy-900'
                 }`}
               >
@@ -151,7 +166,7 @@ export default function Navbar({ onOpenSearch }) {
               <div className="flex items-center justify-between px-5 md:px-10 h-[72px] md:h-[84px] border-b border-white/10">
                 <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
                   <img src="/logo.png" alt="Denford Business Attorneys" width="40" height="40" className="h-10 w-auto object-contain brightness-0 invert" decoding="async" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
-                  <span className="text-white font-display font-black tracking-[0.08em] text-sm">DBA</span>
+                  <span className="text-white font-display font-medium tracking-[0.1em] text-sm">DBA</span>
                 </Link>
                 <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-white p-2">
                   <X size={28} weight="regular" />
@@ -167,6 +182,17 @@ export default function Navbar({ onOpenSearch }) {
                   <span className="font-display text-[0.72rem] tracking-[0.22em] uppercase">Search DBA</span>
                 </button>
 
+                {/* Mobile firm profile download */}
+                <a
+                  href={PROFILE_PDF}
+                  download="Denford-Business-Attorneys-Firm-Profile.pdf"
+                  onClick={() => setOpen(false)}
+                  className="w-full flex items-center gap-3 px-4 py-4 border border-white/20 text-white/80 hover:text-white hover:border-white/40 transition-colors mb-8"
+                >
+                  <DownloadSimple size={18} weight="bold" />
+                  <span className="font-display text-[0.72rem] tracking-[0.22em] uppercase">Download Firm Profile</span>
+                </a>
+
                 <nav className="flex flex-col gap-6">
                   {NAV_LINKS.map((link, i) => (
                     <motion.div
@@ -180,7 +206,7 @@ export default function Navbar({ onOpenSearch }) {
                         end={link.to === '/'}
                         onClick={() => setOpen(false)}
                         className={({ isActive }) =>
-                          `block font-display font-black text-4xl display-tight ${isActive ? 'text-gold-400' : 'text-white'}`
+                          `block font-display font-black text-4xl display-tight ${isActive ? 'text-accent-400' : 'text-white'}`
                         }
                       >
                         <span className="index-label mr-3 inline-block align-middle">0{i + 1}</span>
